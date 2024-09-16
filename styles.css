@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+    /*text-shadow: 
+        1px 1px 0 rgb(175, 181, 213), /* First shadow layer (dark blue)
+        -1px -1px 0 rgb(175, 181, 213), 
+        1px -1px 0 rgb(175, 181, 213), 
+        -1px 1px 0 rgb(175, 181, 213);*/
+}
+.navbar .logo img {
+    margin-right: 10px; 
+    width: 50px; 
+    height: auto; 
+}
+
+.navbar .nav-links a {
+    color: rgba(247, 248, 252, 0.886);
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.navbar .btn {
+    color: #050202;
+    background-color: #168aad; 
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; 
+}
+
+.navbar .btn:hover {
+    background-color: #07052b3a; 
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 38, 38, 0.5);
+    z-index: 0;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #f6f6fa;
+    font-size: 44px;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.about-us {
+    padding: 20px 20px; 
+    background-color: #000814; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    border: 2px solid #f6f6fa; 
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+     
+}
+.about-header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #168aad;
+    margin-bottom: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+
+}
+.about-content {
+    max-width: 60%;
+    text-align: left;
+}
+.about-header i {
+    margin-right: 10px; 
+    font-size: 35px; 
+    border: 2px solid #168aad; 
+    border-radius: 50%; 
+    padding: 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-header h2 {
+    font-size: 35px;
+    color: #168aad;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #fcfcfc;
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #168aad; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 30px; 
+    justify-content: space-between;
+    width:100%;
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #168aad;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}

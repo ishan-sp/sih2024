@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+}
+.navbar .logo img {
+    margin-right: 10px; 
+    width: 50px; 
+    height: auto; 
+}
+
+.navbar .nav-links a {
+    color: rgba(247, 248, 252, 0.886);
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.navbar .btn {
+    color: #050202;
+    background-color: #168aad; 
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; 
+}
+
+.navbar .btn:hover {
+    background-color: #07052b3a; 
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 38, 38, 0.5);
+    z-index: 0;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #f6f6fa;
+    font-size: 44px;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.about-us {
+    padding: 20px 20px; 
+    background-color: #000814; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+     
+}
+.about-header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #168aad;
+    margin-bottom: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+
+}
+.about-content {
+    max-width: 60%;
+    text-align: left;
+}
+.about-header i {
+    margin-right: 10px; 
+    font-size: 35px; 
+    border: 2px solid #168aad; 
+    border-radius: 50%; 
+    padding: 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-header h2 {
+    font-size: 35px;
+    color: #168aad;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #fcfcfc;
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #168aad; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 30px; 
+    justify-content: space-between;
+    width:100%;
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #168aad;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}
+
+.split-container {
+    display: flex;
+    
+    height: calc(100vh - 60px); 
+    margin-top: 60px;
+}
+
+/* Left side*/
+.left-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+}
+
+.login-content h2 {
+    font-size: 24px; 
+    margin-bottom: 10px;
+    color: #0b2040; 
+}
+
+/* Right half  */
+.right-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1; 
+}
+
+/* Box to contain the image */
+.image-box {
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 0;
+    background-color: #0b2040; /* Padding color */
+    background-clip: padding-box; 
+}
+
+/* Image styling */
+.image-box img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.login-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    justify-content: center; 
+    align-items: center;
+    margin:0 auto;
+    max-width: 100%; 
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.submit-btn {
+    background-color: #168aad;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #00BFFF;
+}
+.signup-text {
+    margin-top: 15px; 
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a {
+    color: #0b2040; 
+    text-decoration: none; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a:hover {
+    text-decoration: underline; 
+}
+.signup-form label {
+    display: block;
+    text-align: left; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.signup-form input, .signup-form select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-form select {
+    background-color: #fff; 
+}
+
+#signup-image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    margin-top: 15px;
+    
+}
+#signup-image-box img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain; 
+    border: 15px solid #0b2040;
+}
+.signup-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+    margin-top: 10px;
+}
+.signup-content h2 {
+    font-size: 24px; 
+    margin-bottom: 5px; 
+    margin-top: 10px;
+    color: #0b2040;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.nav-brand {
+    text-decoration: none; 
+    color: inherit; 
+    font-family:'League Spartan', sans-serif;  
+    font-size: 60px;
+}
+.nav-brand:hover {
+    color: inherit; 
+    text-decoration: none; 
+}

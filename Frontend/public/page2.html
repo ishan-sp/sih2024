@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Savvy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Glacial+Indifference:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<nav class="navbar">
+    <ul class="nav-left">
+        <li class="menu-icon">
+            <a href="#" id="menu-toggle">&#9776;</a> <!-- Menu icon (hamburger) -->
+        </li>
+        <li class="logo">
+            <a href="index.html" class="nav-brand">Sea Savvy</a>
+        </li>
+    </ul>
+    <ul class="nav-right">
+        <li class="username-dropdown">
+            <i class="fas fa-user user-icon"></i> <!-- User icon -->
+            <a href="#" id="username-toggle">Username</a>
+            <div id="user-dropdown" class="dropdown-content">
+                <a href="profile.html">Profile</a>
+                <a href="logout.html">Logout</a>
+            </div>
+        </li>
+    </ul>
+    <div id="dropdown-menu" class="dropdown-content">
+        <a href="#">Sea Quest</a>
+        <a href="#">Sea Scholar</a>
+        <a href="#">Marine Monitor</a>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="content-header">
+        
+        <h2>Hey Ishan! <br>Start levelling up and building your weekly streak!</h2>
+        <span class="week-streak">
+            <i class="fas fa-fire fire-icon"></i> <!-- Fire icon -->
+            <span class="week-number">0</span><h2> Week Streak</h2>
+        </span>
+        <span class="level"><h2>LEVEL 6</h2></span>
+    </div>
+    <hr class="custom-line">
+    <div class="info-section">
+        <div class="info-left">
+            <h2>Username</h2>
+            <p>This is a sample paragraph describing something related to the user or content.</p>
+        </div>
+        <div class="info-right">
+            <h3>POINTS 5000</h3>
+        </div>
+    </div>
+    <hr class="custom-line">
+    <div class="image-text-section">
+        <img src="game2.png" alt="game picture" class="image">
+        <div class="text">
+            <h3>Sea Quest</h3>
+            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that bring real data to life!<br>It's as educational as it is entertaining.
+                This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.<br>
+                <br>The game can be played in the browser with the button below.  
+            </p>
+            <div class="button-section">
+                <a href="seaquest.html" class="launch-btn">Launch Sea Quest</a>
+            </div>
+        </div>
+    </div>
+    <div class="image-text-section-reverse">
+        <div class="text-content">
+            <h3>Sea Scholar</h3>
+            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that bring real data to life!<br>It's as educational as it is entertaining.
+                This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.<br>
+                <br>The game can be played in the browser with the button below.  
+            </p>
+            <!--<div class="button-section2"></div>
+                <a href="seascholar.html" class="launch-btn">Launch Sea Scholar</a>
+            </div>-->
+        </div>
+        <div class="image-content">
+            <img src="edu3.png" alt="Description of Image">
+        </div>
+    </div>
+    
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

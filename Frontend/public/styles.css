@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+}
+.navbar .logo img {
+    margin-right: 10px; 
+    width: 50px; 
+    height: auto; 
+}
+
+.navbar .nav-links a {
+    color: rgba(247, 248, 252, 0.886);
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.navbar .btn {
+    color: #050202;
+    background-color: #168aad; 
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; 
+}
+
+.navbar .btn:hover {
+    background-color: #07052b3a; 
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 38, 38, 0.5);
+    z-index: 0;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #f6f6fa;
+    font-size: 44px;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.about-us {
+    padding: 20px 20px; 
+    background-color: #000814; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+     
+}
+.about-header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #168aad;
+    margin-bottom: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+
+}
+.about-content {
+    max-width: 60%;
+    text-align: left;
+}
+.about-header i {
+    margin-right: 10px; 
+    font-size: 35px; 
+    border: 2px solid #168aad; 
+    border-radius: 50%; 
+    padding: 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-header h2 {
+    font-size: 35px;
+    color: #168aad;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #fcfcfc;
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #168aad; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 30px; 
+    justify-content: space-between;
+    width:100%;
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #168aad;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}
+
+.split-container {
+    display: flex;
+    
+    height: calc(100vh - 60px); 
+    margin-top: 60px;
+}
+
+/* Left side*/
+.left-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+}
+
+.login-content h2 {
+    font-size: 24px; 
+    margin-bottom: 10px;
+    color: #0b2040; 
+}
+
+/* Right half  */
+.right-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1; 
+}
+
+/* Box to contain the image */
+.image-box {
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 0;
+    background-color: #0b2040; /* Padding color */
+    background-clip: padding-box; 
+}
+
+/* Image styling */
+.image-box img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.login-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    justify-content: center; 
+    align-items: center;
+    margin:0 auto;
+    max-width: 100%; 
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.submit-btn {
+    background-color: #168aad;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #00BFFF;
+}
+.signup-text {
+    margin-top: 15px; 
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a {
+    color: #0b2040; 
+    text-decoration: none; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a:hover {
+    text-decoration: underline; 
+}
+.signup-form label {
+    display: block;
+    text-align: left; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.signup-form input, .signup-form select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-form select {
+    background-color: #fff; 
+}
+
+#signup-image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    margin-top: 15px;
+    
+}
+#signup-image-box img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain; 
+    border: 15px solid #0b2040;
+}
+.signup-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+    margin-top: 10px;
+}
+.signup-content h2 {
+    font-size: 24px; 
+    margin-bottom: 5px; 
+    margin-top: 10px;
+    color: #0b2040;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.nav-brand {
+    text-decoration: none; 
+    color: inherit; 
+    font-family:'League Spartan', sans-serif;  
+    font-size: 60px;
+}
+.nav-brand:hover {
+    color: inherit; 
+    text-decoration: none; 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+/* Menu Icon Styling */
+.menu-icon a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#dropdown-menu {
+    display: none;  /*Hidden initially */
+    position: absolute;
+    top: 85px;
+    left: 10px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width:200px;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+#dropdown-menu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+#dropdown-menu a:hover {
+    background-color: #ddd;
+}
+li.seaquest-dropdown .dropdown-content {
+    display: none;
+}
+
+li.seaquest-dropdown.active .dropdown-content {
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+/* Username link on the right */
+.nav-right li a {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.username-dropdown {
+    position: relative;
+    display: inline-block;
+}
+#user-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px; /* Adjust to match the height of your navbar */
+    right: -10px;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.user-icon {
+    margin-right: 8px; /* Space between the icon and the username */
+    font-size: 1.2em; /* Adjust icon size as needed */
+    color: #f8f6f6; /* Color of the icon */
+}
+
+#user-dropdown a {
+    color: #003366;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#user-dropdown a:hover {
+    background-color: #ddd;
+}
+.username-dropdown.active #user-dropdown {
+    display: block;
+}
+.content {
+    padding-top: 100px; /* Adjust this value to move content further down */
+    margin-left: 30px;
+}
+.content-header {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    padding: 0 10px; /* Optional padding to avoid edge contact */
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Style for Level 6 */
+.level {
+    color: #003366; /* Adjust color as needed */
+    margin-right: 30px;
+    border: 2px solid #333; /* Border around the box */
+    padding: 10px 15px; /* Space inside the border */
+    background-color: #f9f9f9; /* Background color inside the border, optional */
+    box-shadow: 0px 4px 6px rgba(17, 13, 75, 0.1); /* Optional shadow for 3D effect */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Glacial Indifference', sans-serif;
+    
+}
+.week-streak {
+    color: #333; /* Adjust text color as needed */
+    font-family: 'Glacial Indifference', sans-serif;
+    
+}
+.week-number {
+    font-size: 2em; /* Make "0" larger */
+    font-weight: bold; /* Make "0" bold */
+    color: #333; /* Ensure the color matches the rest of the text */
+    align-items: center;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.fire-icon {
+    font-size: 2em; /* Adjust icon size as needed */
+    color: #ff4500; /* Fire color, adjust as needed */
+    margin-right: 8px; /* Space between icon and text */
+}
+.content-header h2{
+    color:#003366;
+    margin-left: 15px;
+}
+.custom-line {
+    border: none; /* Remove default border */
+    height: 4px; /* Set the thickness of the line */
+    background-color: #333; /* Set the color of the line */
+    border-radius: 5px; /* Rounded edges */
+    width: 95%; /* Width of the line (almost full width) */
+    margin: 20px ; /* Center the line and add space above/below */
+}
+.info-section {
+    display: flex;
+    justify-content: space-between; /* Aligns the left and right sections */
+    align-items: center; /* Vertically aligns the content */
+    padding: 10px 0; /* Add some space between content and the horizontal line */
+}
+
+/* Styling for the left side (Username and paragraph) */
+.info-left {
+    max-width: 70%; /* Limit the width of the left content */
+}
+
+/* Styling for the right side (POINTS 5000) */
+.info-right {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.5em; /* Adjust the size of the points text */
+    margin-right: 40px;
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Optional: Styling the heading for Username */
+.info-left h2, .info-right h2 {
+    margin-left: 20px;
+    font-size: 1.8em; /* Adjust size as needed */
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.info-left p {
+    margin-top: 10px;
+    font-size: 1em; /* Adjust as needed */
+    margin-left: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.image-text-section {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin: 20px 0; /* Add space around the section */
+}
+.image {
+    max-width: 50%; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+.text {
+    max-width: 50%; /* Adjust text width as needed */
+    
+}
+.text h3 {
+    margin-top: -30px;
+    font-size: 2em; /* Adjust heading size */
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.text p {
+    font-size: 20px; /* Adjust paragraph size */
+    font-family: 'Glacial Indifference', sans-serif;
+    margin-top: 20px;
+}
+.launch-btn {
+    display: inline-block;
+    padding: 12px 24px; /* Adjust padding for size */
+    background-color: #007BFF; /* Set button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px;
+    margin-top: 20px; /* Space between paragraph and button */
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-align: center;
+    align-items: center;
+}
+
+.launch-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.image-text-section-reverse {
+    display: flex;
+    align-items: center; /* Vertically center image and text */
+    justify-content: space-between; /* Create space between the text and image */
+    margin-top: 30px; /* Add spacing between this and the previous section */
+    display: flex;
+    align-items: center; /* Vertically center items */
+
+}
+
+.image-text-section-reverse .text-content {
+    width: 50%; /* Text takes up half the width */
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    padding-right: 20px; /* Add space between text and image */
+}
+
+.image-text-section-reverse .image-content {
+    width: 50%; /* Image takes up the other half */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    margin-right: 30px;
+}
+
+.image-text-section-reverse img {
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+.text-content {
+    max-width: 50%; /* Adjust text width as needed */
+    
+}
+.text-content h3 {
+    margin-top: -30px;
+    font-size: 2em; /* Adjust heading size */
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.text-content p {
+    font-size: 20px; /* Adjust paragraph size */
+    font-family: 'Glacial Indifference', sans-serif;
+    margin-top: 20px;
+}
+

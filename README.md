@@ -75,7 +75,7 @@ git pull origin main
 ```
 There is no requirements for this for our codebase. Sticking to a few commands mentioned previously is enough to get going.
 
-For deleting your branch (you must only do so if you are sure the code on main has been updated via a pull request/your branch is redundant.
+For deleting your branch (you must only do so if you are sure the code on main has been updated via a pull request/your branch is redundant)
 You can run the following code
 ```bash
 git checkout main

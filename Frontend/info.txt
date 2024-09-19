@@ -1,0 +1,1 @@
+{"username":"hello123","email":"hello123@example.com","password":"hello","role":"fisherman","points":0,"level":0,"streak":0}

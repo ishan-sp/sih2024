@@ -1,0 +1,1034 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+}
+.navbar .logo img {
+    margin-right: 10px; 
+    width: 50px; 
+    height: auto; 
+}
+
+.navbar .nav-links a {
+    color: rgba(247, 248, 252, 0.886);
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.navbar .btn {
+    color: #050202;
+    background-color: #168aad; 
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; 
+}
+
+.navbar .btn:hover {
+    background-color: #07052b3a; 
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 38, 38, 0.5);
+    z-index: 0;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #f6f6fa;
+    font-size: 44px;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.about-us {
+    padding: 20px 20px; 
+    background-color: #000814; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+     
+}
+.about-header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #168aad;
+    margin-bottom: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+
+}
+.about-content {
+    max-width: 60%;
+    text-align: left;
+}
+.about-header i {
+    margin-right: 10px; 
+    font-size: 35px; 
+    border: 2px solid #168aad; 
+    border-radius: 50%; 
+    padding: 10px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-header h2 {
+    font-size: 35px;
+    color: #168aad;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #fcfcfc;
+}
+
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #168aad; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 30px; 
+    justify-content: space-between;
+    width:100%;
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #168aad;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}
+
+.split-container {
+    display: flex;
+    
+    height: calc(100vh - 60px); 
+    margin-top: 60px;
+}
+
+/* Left side*/
+.left-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+}
+
+.login-content h2 {
+    font-size: 24px; 
+    margin-bottom: 10px;
+    color: #0b2040; 
+}
+
+/* Right half  */
+.right-half {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f1f1f1; 
+}
+
+/* Box to contain the image */
+.image-box {
+    width: 80%; 
+    max-width: 600px; 
+    height: auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 0;
+    background-color: #0b2040; /* Padding color */
+    background-clip: padding-box; 
+}
+
+/* Image styling */
+.image-box img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.login-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    justify-content: center; 
+    align-items: center;
+    margin:0 auto;
+    max-width: 100%; 
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.submit-btn {
+    background-color: #168aad;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif ;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #00BFFF;
+}
+.signup-text {
+    margin-top: 15px; 
+    font-size: 15px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a {
+    color: #0b2040; 
+    text-decoration: none; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-text a:hover {
+    text-decoration: underline; 
+}
+.signup-form label {
+    display: block;
+    text-align: left; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.signup-form input, .signup-form select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.signup-form select {
+    background-color: #fff; 
+}
+
+#signup-image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    margin-top: 15px;
+    
+}
+#signup-image-box img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain; 
+    border: 15px solid #0b2040;
+}
+.signup-content {
+    text-align: center; 
+    max-width: 600px; 
+    width: 100%; 
+    margin-top: 10px;
+}
+.signup-content h2 {
+    font-size: 24px; 
+    margin-bottom: 5px; 
+    margin-top: 10px;
+    color: #0b2040;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.nav-brand {
+    text-decoration: none; 
+    color: inherit; 
+    font-family:'League Spartan', sans-serif;  
+    font-size: 60px;
+}
+.nav-brand:hover {
+    color: inherit; 
+    text-decoration: none; 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+/* Menu Icon Styling */
+.menu-icon a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#dropdown-menu {
+    display: none;  /*Hidden initially */
+    position: absolute;
+    top: 85px;
+    left: 10px;
+    background-color: #000814;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width:180px;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+
+#dropdown-menu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #ebeff2;
+    font-size: 18px;
+}
+#dropdown-menu a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+#dropdown-menu a:hover {
+    background-color: #6ca5b7;
+}
+li.seaquest-dropdown .dropdown-content {
+    display: none;
+}
+
+li.seaquest-dropdown.active .dropdown-content {
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+/* Username link on the right */
+.nav-right li a {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.username-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+#user-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px; /* Adjust to match the height of your navbar */
+    right: -10px;
+    background-color: #000814;
+    transform: translateX(+20%); /* Center-align the dropdown by shifting it left */
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+.user-icon {
+    margin-right: 8px; /* Space between the icon and the username */
+    font-size: 1.2em; /* Adjust icon size as needed */
+    color: #f4efef; /* Color of the icon */
+}
+.user-initial {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    background-color: #3498db; /* Circle background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 15px; /* Font size */
+    font-weight: bold;
+    margin-right: 10px; /* Space between the circle and username */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+}
+
+#user-dropdown a {
+    color: #ebeff2;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family:'Glacial Indifference', sans-serif;
+}
+
+#user-dropdown a:hover {
+    background-color: #6ca5b7;
+}
+.username-dropdown.active #user-dropdown {
+    display: block;
+}
+.content {
+    padding-top: 100px; /* Adjust this value to move content further down */
+    margin-left: 30px;
+}
+.content-header {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    padding: 0 10px; /* Optional padding to avoid edge contact */
+    font-family: 'Glacial Indifference', sans-serif;
+    /*background-color: #9cc1d9*/
+}
+.section-rect {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f2f2f2; /* Light grey background color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a slight 3D effect */
+}
+
+/* Style for Level 6 */
+.level {
+    color: #003366; /* Adjust color as needed */
+    margin-right: 30px;
+    border: 2px solid #333; /* Border around the box */
+    padding: 10px 15px; /* Space inside the border */
+    background-color: #f9f9f9; /* Background color inside the border, optional */
+    box-shadow: 0px 4px 6px rgba(17, 13, 75, 0.1); /* Optional shadow for 3D effect */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Glacial Indifference', sans-serif;
+    
+}
+.week-streak {
+    color: #333; /* Adjust text color as needed */
+    font-family: 'Glacial Indifference', sans-serif;
+    
+}
+.week-number {
+    font-size: 2em; /* Make "0" larger */
+    font-weight: bold; /* Make "0" bold */
+    color: #333; /* Ensure the color matches the rest of the text */
+    align-items: center;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.fire-icon {
+    font-size: 2em; /* Adjust icon size as needed */
+    color: #ff4500; /* Fire color, adjust as needed */
+    margin-right: 8px; /* Space between icon and text */
+}
+.content-header h2{
+    color:#003366;
+    margin-left: 15px;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between; /* Aligns the left and right sections */
+    align-items: center; /* Vertically aligns the content */
+    padding: 10px 0; /* Add some space between content and the horizontal line */
+}
+
+/* Styling for the left side (Username and paragraph) */
+.info-left {
+    max-width: 70%; /* Limit the width of the left content */
+}
+
+/* Styling for the right side (POINTS 5000) */
+.info-right {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.5em; /* Adjust the size of the points text */
+    margin-right: 40px;
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Optional: Styling the heading for Username */
+.info-left h2, .info-right h2 {
+    margin-left: 20px;
+    font-size: 1.8em; /* Adjust size as needed */
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.info-left p {
+    margin-top: 10px;
+    font-size: 1em; /* Adjust as needed */
+    margin-left: 20px;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.image-text-section {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin: 20px 0; /* Add space around the section */
+}
+.image {
+    max-width: 50%; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+.text {
+    max-width: 50%; /* Adjust text width as needed */
+    
+}
+.text h3 {
+    margin-top: -30px;
+    font-size: 2em; /* Adjust heading size */
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.text p {
+    font-size: 20px; /* Adjust paragraph size */
+    font-family: 'Glacial Indifference', sans-serif;
+    margin-top: 20px;
+}
+.launch-btn {
+    display: inline-block;
+    padding: 12px 24px; /* Adjust padding for size */
+    background-color: #007BFF; /* Set button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px;
+    margin-top: 20px; /* Space between paragraph and button */
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-align: center;
+    align-items: center;
+}
+
+.launch-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.image-text-section-reverse {
+    display: flex;
+    align-items: center; /* Vertically center image and text */
+    justify-content: space-between; /* Create space between the text and image */
+    margin-top: 30px; /* Add spacing between this and the previous section */
+    display: flex;
+    align-items: center; /* Vertically center items */
+
+}
+
+.image-text-section-reverse .text-content {
+    width: 50%; /* Text takes up half the width */
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    padding-right: 20px; /* Add space between text and image */
+}
+
+.image-text-section-reverse .image-content {
+    width: 50%; /* Image takes up the other half */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    margin-right: 30px;
+}
+
+.image-text-section-reverse img {
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+.text-content {
+    max-width: 50%; 
+    
+}
+.text-content h3 {
+    margin-top: -30px;
+    font-size: 2em; 
+    color:#003366;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.text-content p {
+    font-size: 20px; 
+    font-family: 'Glacial Indifference', sans-serif;
+    margin-top: 20px;
+}
+.scholar-btn {
+    background-color: #007BFF; 
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    margin-top: 20px; 
+    display: inline-block; 
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease;
+}
+.scholar-btn:hover {
+    background-color: #005f87; 
+}
+
+/*specifically for page2_1*/
+.stats-section {
+    background-color: #acbbca; 
+    width: 100%; 
+    padding-top: 15px; 
+    padding-bottom: 2px;
+    box-sizing: border-box; 
+    margin-top: 85px;
+    height:auto;
+    background-image: linear-gradient(to right, rgb(9, 44, 59) , rgb(177, 224, 244));
+    display:flex; 
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+/* Flexbox for horizontal arrangement of content */
+.row.first-row{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px; 
+    width: 100%;
+
+}
+
+.greeting {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0eaea;
+    text-align: left;
+    margin-left: 40px;
+    margin-top:10px;
+}
+
+.greeting strong {
+    font-size: 24px;
+}
+
+/* Streak row styling */
+.streak-row {
+    display: flex;
+    align-items: center; 
+    /*margin-top: 10px;*/
+    margin-left: auto;
+    margin-right:50px;
+}
+
+/* Fire emoji and number styling */
+.fire-emoji {
+    font-size: 28px; 
+    margin-right: 0px; 
+}
+
+.streak-number {
+    font-size: 28px; 
+    font-weight: bold;
+    margin-right: 5px; 
+}
+
+.week-streak {
+    font-size: 20px;
+    color: #0c0909;
+}
+
+/* Progress bar placeholder */
+.progress-bar-placeholder {
+    height: 10px; 
+    width: 150px; 
+    background-color: #959090; 
+    margin-left: 20px; 
+    border-radius: 5px; 
+}
+/* Styling for the second row */
+.second-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width:100%;
+    margin-left: 40px; 
+    
+}
+.user-info {
+    font-family: 'Glacial Indifference', sans-serif;
+     
+    
+}
+
+.user-info strong {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fbf9f7; 
+}
+
+.user-info span {
+    font-size: 18px;
+    color: #f8f5ef; 
+}
+.points-row {
+    display: flex;
+    align-items: center; 
+    
+    
+    color: #f0eaea; 
+    margin-right:278px;
+}
+.medal-emoji {
+    font-size: 32px; 
+    vertical-align: middle; 
+}
+.points-text{
+    font-size: 20px;
+    color: #0b0907;
+    margin-right: 10px;
+}
+.points-number {
+    font-weight: bold; 
+    font-size: 35px;
+    color: #0a0907;
+}
+
+/*game section*/
+.sea-quest-section {
+    background-image: linear-gradient(#c2b1da,rgb(120, 62, 130), #470163); /* Gradient from light blue to dark green */
+    padding: 30px; 
+    text-align: center; 
+    color: white; 
+    align-items: center;
+}
+.sea-quest-section h2 {
+    font-size: 42px; 
+    margin-bottom: 10px; 
+}
+
+/* Styling for the tagline */
+.tagline {
+    font-size: 22px; 
+    margin-bottom: 10px; 
+}
+
+/* Styling for the image */
+.sea-quest-image {
+    max-width: 60%; 
+    height: auto;
+    border-radius: 50%; 
+    margin-top: 20px; 
+}
+/* Flexbox layout for two columns */
+.two-column-section {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+/* Left column styling */
+.left-column {
+    flex: 1; 
+    padding-right: 20px; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0f0f0;
+    text-align: left;
+}
+
+/* Right column styling */
+.right-column {
+    flex: 1; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: left;
+}
+
+/* Button styling */
+.start-sea-quest {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #080b0d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.start-sea-quest:hover {
+    background-color: #5d6468; 
+}
+/*split section for Sea scholar and Marine Monitor*/
+
+.split-section {
+    display: flex;
+    height: auto; 
+    width: 100%;
+    gap: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Left half with gradient background */
+.left-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom right,#7cb7cd, #3c9e96, rgb(23, 54, 95));
+    padding: 10px;
+}
+
+/* Right half with gradient background */
+.right-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom left,#8768ab,rgb(79, 67, 169), #182a83);
+    padding: 10px;
+    height: auto;
+}
+/* Sea Scholar Section Styling */
+.sea-scholar-section {
+    display: flex;                     
+    flex-direction: column;           
+    align-items: center;              
+    justify-content: flex-start;           
+    height: auto;                    
+    padding: 0px;                    
+    background: transparent; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* Heading Styling */
+.section-heading {
+    font-size: 42px;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Tagline Styling */
+.section-tagline {
+    
+    font-family: 'Glacial Indifference', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.scholar-icon {
+    font-size: 80px; 
+    color: white; 
+    
+}
+.icon-container {
+    display: flex;                   
+    justify-content: center;         
+    align-items: center;             
+    width: 180px;                    
+    height: 180px;                   
+    border: 2px solid white;      
+    border-radius: 50%;             
+    background: transparent;
+    margin-top: 10px;               
+}
+/*right half marine monitor*/
+.marine-monitor-section {
+    display: flex;                    
+    flex-direction: column;          
+    align-items: center;              
+    justify-content: flex-start;          
+    height: auto;                    
+    padding: 0px;                     
+    background: transparent; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* Same icon container for the news icon */
+.monitor-icon {
+    font-size: 80px;                
+    color: white;                   
+}
+/*left section info*/
+.additional-info-section {
+    display: flex;                    
+    flex-direction: column;           
+    align-items: center;              
+    justify-content: center;           
+    height: auto;                   
+    padding: 20px;                    
+    background: transparent; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+/* Button Styling */
+.action-button {
+    margin-top: 10px;                 
+    padding: 10px 20px;               
+    font-size: 20px;                  
+    background-color: #090b0e;       
+    color: white;                     
+    border: none;                     
+    border-radius: 5px;              
+    cursor: pointer;                  
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.action-button:hover {
+    background-color: #5d6468;       
+}
+
+
+
+
+
+
+

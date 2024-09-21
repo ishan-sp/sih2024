@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,101 +9,119 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Glacial+Indifference:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar">
-    <ul class="nav-left">
-        <li class="menu-icon">
-            <a href="#" id="menu-toggle">&#9776;</a> <!-- Menu icon (hamburger) -->
-        </li>
-        <li class="logo">
-            <a href="/" class="nav-brand">Sea Savvy</a>
-        </li>
-    </ul>
-    <ul class="nav-right">
-        <li class="username-dropdown">
-            <i class="fas fa-user user-icon"></i> <!-- User icon -->
-            <a href="#" id="username-toggle"><%= username %></a> <!-- Dynamic username -->
-            <div id="user-dropdown" class="dropdown-content">
-                <a href="/profile"><i class="fas fa-user"></i> Profile</a> <!-- Profile icon -->
-                <a href="/rewards"><i class="fas fa-gem"></i> Points and Rewards</a> <!-- Gem icon -->
-                <a href="/settings"><i class="fas fa-cog"></i> Settings</a> <!-- Settings icon -->
-                <a href="/help"><i class="fas fa-question-circle"></i> Help Center</a> <!-- Help icon -->
-                <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Logout icon -->
-            </div>
-        </li>
-    </ul>
-    <div id="dropdown-menu" class="dropdown-content">
-        <a href="/seaquest"><i class="fas fa-gamepad"></i> Sea Quest</a>
-        <a href="/seascholar"><i class="fas fa-book"></i> Sea Scholar</a>
-        <a href="/marinemonitor"><i class="fas fa-bullhorn"></i> Marine Monitor</a>
-    </div>
-</nav>
+    <!-- Navbar-->
+    <nav class="navbar">
+        <ul class="nav-left">
+            <li class="menu-icon">
+                <a href="#" id="menu-toggle">&#9776;</a> <!-- Menu icon (hamburger) -->
+            </li>
+            <li class="logo">
+                <a href="index.html" class="nav-brand">Sea Savvy</a>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li class="username-dropdown">
+                <div class="user-initial"><%= dataj.username.charAt(0).toUpperCase() %></div>
+                <a href="#" id="username-toggle"><%= dataj.username %></a>
+                <div id="user-dropdown" class="dropdown-content">
+                    <a href="#"><i class="fas fa-medal"></i> Points and Rewards</a>
+                    <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </li>
+        </ul>
+        <div id="dropdown-menu" class="dropdown-content">
+            <a href="#"><i class="fas fa-gamepad"></i>Sea Quest</a>
+            <a href="#"><i class="fas fa-book-open"></i>Sea Scholar</a>
+            <a href="#"><i class="fas fa-bullhorn"></i>Marine Monitor</a>
+        </div>
+    </nav>
 
-<div class="content">
-    <div class="content-header">
-        <h2>Hey <%= username %>! <br>Start leveling up and building your weekly streak!</h2> <!-- Dynamic username -->
-        <span class="week-streak">
-            <i class="fas fa-fire fire-icon"></i> <!-- Fire icon -->
-            <span class="week-number"><%= streak %></span> <!-- Dynamic streak -->
-            <h2> Week Streak</h2>
-        </span>
-        <span class="level"><h2>LEVEL <%= level %></h2></span> <!-- Dynamic level -->
-    </div>
-    <hr class="custom-line">
-    <div class="info-section">
-        <div class="info-left">
-            <h2><%= username %></h2> <!-- Dynamic username -->
-            <p>Role: <%= role %></p> <!-- Dynamic role -->
-            <p>Email: <%= email %></p> <!-- Dynamic email -->
+    <div class="stats-section">
+        <!-- First row content -->
+        <div class="row first-row">
+            <div class="greeting">
+                <strong>Hi <%= dataj.name %>!</strong><br>
+                Start levelling up and building your weekly streak
+            </div>
+            <div class="streak-row">
+                <span class="fire-emoji">🔥</span>
+                <span class="streak-number"><%= dataj.streak %></span>
+                <span class="week-streak">week streak</span>
+                
+                <!-- Space for the progress bar to be added later -->
+                <div class="progress-bar-placeholder"></div>
+            </div>
         </div>
-        <div class="info-right">
-            <h3>POINTS <%= points %></h3> <!-- Dynamic points -->
-        </div>
-    </div>
-    <hr class="custom-line">
-    <div class="image-text-section">
-        <img src="game2.png" alt="game picture" class="image">
-        <div class="text">
-            <h3>Sea Quest</h3>
-            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that brings real data to life!<br>It's as educational as it is entertaining.
-                This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.<br>
-                <br>The game can be played in the browser with the button below.  
-            </p>
-            <div class="button-section">
-                <a href="/seaquest" class="launch-btn">Launch Sea Quest</a>
+        <!-- Second row content -->
+        <div class="row second-row">
+            <div class="user-info">
+                <strong><%= dataj.username %></strong><br>
+                <span><b><%= dataj.role %></b></span>
+            </div>
+            <div class="points-row">
+                <span class="medal-emoji">🎖️</span>
+                <span class="points-text">POINTS</span>
+                <span class="points-number"><b><%= dataj.points %></b></span>
             </div>
         </div>
     </div>
-    <div class="image-text-section-reverse">
-        <div class="text-content">
-            <h3>Sea Scholar</h3>
-            <p>Easily access a wide variety of resources - articles, courses and much more using <b>Sea Scholar</b>!<br>It's time to make learning fun and easy using our personalised Educational Hub.
-                Students, researchers, scholars, and enthusiasts have easy access to organised information, maps, courses, and more, increasing accessibility to Ocean Literacy.<br>
-                <br>Access the Educational Hub by clicking the button below.  
-            </p>
-            <div class="button-section">
-                <a href="/seascholar" class="launch-btn">Open Sea Scholar</a>
-            </div>
-        </div>
-        <div class="image-content">
-            <img src="edu3.png" alt="Education img">
-        </div>
-    </div>
-    <div class="image-text-section">
-        <img src="news.png" alt="news pic" class="image">
-        <div class="text">
-            <h3>Marine Monitor</h3>
-            <p>Introducing <b>Marine Monitor</b>, your go-to source for real-time updates on ocean conditions and safety alerts.<br>
-                Stay informed with the latest news, weather forecasts, and alerts about storms, tsunamis, and other marine events.
-                 With Marine Monitor, you can navigate the ocean confidently, ensuring you’re always prepared for whatever lies ahead.
-                <br><br>Go to Marine Monitor by clicking the button below.
-            </p>
-            <div class="button-section">
-                <a href="/marinemonitor" class="launch-btn">Go to Marine Monitor</a>
-            </div>
-        </div>
-    </div>
-</div>
 
-<script src="script.js"></script>
+    <!--game section-->
+    <div class="sea-quest-section">
+        <h2>Sea Quest</h2>
+        <p class="tagline">Dive deep into Oceanic fun!</p>
+        <img src="game.jpeg" alt="Sea Quest Image" class="sea-quest-image">
+        
+        <div class="two-column-section">
+            <div class="left-column">
+                <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that brings real data to life!<br>It's as educational as it is entertaining.
+                This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.</p>
+            </div>
+            <div class="right-column">
+                <p>Earn points, unlock achievements, and challenge your friends in this engaging and educational underwater adventure.<br>
+                The game can be played in the browser with the button below.</p>
+                <!-- Center aligned button in the right column -->
+                <button class="start-sea-quest">Start Sea Quest</button>
+            </div>
+        </div>
+    </div>
+    <!--split section for edu hub and news-->
+    <div class="split-section">
+        <div class="left-half">
+            <div class="sea-scholar-section">
+                <h2 class="section-heading">Sea Scholar</h2>
+                <p class="section-tagline">Your go-to source for all ocean knowledge</p>
+                <div class="icon-container">
+                    <i class="fas fa-book-open scholar-icon"></i>
+                </div>
+            </div>
+            <div class="additional-info-section">
+                <p>Easily access a wide variety of resources - articles, courses and much more using <b>Sea Scholar!</b><br>It's time to make learning fun and easy using our personalised Educational Hub.
+                    Students, researchers, scholars and enthusiasts have easy access to organised information, maps, courses and more, increasing accessibility to ocean literacy
+                    <br><br>Click the below button to go to Sea Scholar</p>
+                <button class="action-button">Go to Sea Scholar</button>
+            </div>
+        </div>
+        <div class="right-half">
+            <div class="marine-monitor-section">
+                <h2 class="section-heading">Marine Monitor</h2>
+                <p class="section-tagline">Your safety is our priority</p>
+                <div class="icon-container">
+                    <i class="fas fa-bullhorn monitor-icon"></i> <!-- News icon -->
+                </div>
+            </div>
+            <div class="additional-info-section">
+                <p>Introducing <b>Marine Monitor</b>, your go-to source for real-time updates on ocean conditions and safety alerts.<br>
+                    Stay informed with the latest news, weather forecasts, and alerts about storms, tsunamis, and other marine events.
+                    With Marine Monitor, you can navigate the ocean confidently, ensuring you’re always prepared for whatever lies ahead.
+                    <br><br>Click the below button to open Marine Monitor</p>
+                <button class="action-button">Open Marine Monitor</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>

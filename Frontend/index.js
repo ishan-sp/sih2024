@@ -53,16 +53,19 @@ app.get("/main", (req, res) => {
             try {
                 const dataj = JSON.parse(data);
                 console.log(dataj);
-                //res.render(__dirname + "/public/page2_1.html", dataj);
-                res.sendFile(__dirname + "/public/page2_1.html");
+                // Rendering 'page2.ejs' and passing 'dataj' to it
+                res.render(__dirname + "/public/page2.ejs", { dataj: dataj });
             } catch (parseErr) {
                 console.log("Error parsing JSON: ", parseErr);
+                res.status(500).send("Error parsing data");
             }
         } else {
             console.log("Error reading file: ", err);
+            res.status(500).send("Error reading file");
         }
     });
 });
+
 
 app.listen(port, ()=> {
     console.log(`Server has started! Listening on port ${port}`);

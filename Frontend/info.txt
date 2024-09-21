@@ -1,1 +1,1 @@
-{"username":"eesf","email":"sfesf@gg","password":"efef","role":"fisherman","points":0,"streak":0,"level":0}
+{"username":"awdwad","email":"awdwa@gg","password":"dawd","role":"fisherman","points":0,"streak":0,"level":0}

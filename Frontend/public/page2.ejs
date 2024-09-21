@@ -23,15 +23,18 @@
             <i class="fas fa-user user-icon"></i> <!-- User icon -->
             <a href="#" id="username-toggle"><%= username %></a> <!-- Dynamic username -->
             <div id="user-dropdown" class="dropdown-content">
-                <a href="/profile">Profile</a>
-                <a href="/logout">Logout</a>
+                <a href="/profile"><i class="fas fa-user"></i> Profile</a> <!-- Profile icon -->
+                <a href="/rewards"><i class="fas fa-gem"></i> Points and Rewards</a> <!-- Gem icon -->
+                <a href="/settings"><i class="fas fa-cog"></i> Settings</a> <!-- Settings icon -->
+                <a href="/help"><i class="fas fa-question-circle"></i> Help Center</a> <!-- Help icon -->
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Logout icon -->
             </div>
         </li>
     </ul>
     <div id="dropdown-menu" class="dropdown-content">
-        <a href="#">Sea Quest</a>
-        <a href="#">Sea Scholar</a>
-        <a href="#">Marine Monitor</a>
+        <a href="/seaquest"><i class="fas fa-gamepad"></i> Sea Quest</a>
+        <a href="/seascholar"><i class="fas fa-book"></i> Sea Scholar</a>
+        <a href="/marinemonitor"><i class="fas fa-bullhorn"></i> Marine Monitor</a>
     </div>
 </nav>
 
@@ -61,28 +64,44 @@
         <img src="game2.png" alt="game picture" class="image">
         <div class="text">
             <h3>Sea Quest</h3>
-            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that bring real data to life!<br>It's as educational as it is entertaining.
+            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that brings real data to life!<br>It's as educational as it is entertaining.
                 This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.<br>
                 <br>The game can be played in the browser with the button below.  
             </p>
             <div class="button-section">
-                <a href="seaquest.html" class="launch-btn">Launch Sea Quest</a>
+                <a href="/seaquest" class="launch-btn">Launch Sea Quest</a>
             </div>
         </div>
     </div>
     <div class="image-text-section-reverse">
         <div class="text-content">
             <h3>Sea Scholar</h3>
-            <p>Discover the ocean’s secrets with our engaging game <b>Sea Quest</b> that bring real data to life!<br>It's as educational as it is entertaining.
-                This decision-driven experience helps students construct explanations, reason effectively, and become self-directed learners involving marine science and ocean literacy.<br>
-                <br>The game can be played in the browser with the button below.  
+            <p>Easily access a wide variety of resources - articles, courses and much more using <b>Sea Scholar</b>!<br>It's time to make learning fun and easy using our personalised Educational Hub.
+                Students, researchers, scholars, and enthusiasts have easy access to organised information, maps, courses, and more, increasing accessibility to Ocean Literacy.<br>
+                <br>Access the Educational Hub by clicking the button below.  
             </p>
+            <div class="button-section">
+                <a href="/seascholar" class="launch-btn">Open Sea Scholar</a>
+            </div>
         </div>
         <div class="image-content">
-            <img src="edu3.png" alt="Description of Image">
+            <img src="edu3.png" alt="Education img">
         </div>
     </div>
-    
+    <div class="image-text-section">
+        <img src="news.png" alt="news pic" class="image">
+        <div class="text">
+            <h3>Marine Monitor</h3>
+            <p>Introducing <b>Marine Monitor</b>, your go-to source for real-time updates on ocean conditions and safety alerts.<br>
+                Stay informed with the latest news, weather forecasts, and alerts about storms, tsunamis, and other marine events.
+                 With Marine Monitor, you can navigate the ocean confidently, ensuring you’re always prepared for whatever lies ahead.
+                <br><br>Go to Marine Monitor by clicking the button below.
+            </p>
+            <div class="button-section">
+                <a href="/marinemonitor" class="launch-btn">Go to Marine Monitor</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="script.js"></script>

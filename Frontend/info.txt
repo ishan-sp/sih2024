@@ -1,1 +1,1 @@
-{"email":"f20230693@hyderabad.bits-pilani.ac.in","password":"ff4f"}
+{"username":"eesf","email":"sfesf@gg","password":"efef","role":"fisherman","points":0,"streak":0,"level":0}

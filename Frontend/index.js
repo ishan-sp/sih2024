@@ -53,7 +53,8 @@ app.get("/main", (req, res) => {
             try {
                 const dataj = JSON.parse(data);
                 console.log(dataj);
-                res.render(__dirname + "/public/page2.ejs", dataj);
+                //res.render(__dirname + "/public/page2_1.html", dataj);
+                res.sendFile(__dirname + "/public/page2_1.html");
             } catch (parseErr) {
                 console.log("Error parsing JSON: ", parseErr);
             }

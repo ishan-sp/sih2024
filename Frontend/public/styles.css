@@ -402,24 +402,30 @@ li {
     position: absolute;
     top: 85px;
     left: 10px;
-    background-color: white;
-    min-width: 160px;
+    background-color: #000814;
+    min-width: 140px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    width:200px;
+    width:180px;
     font-family: 'Glacial Indifference', sans-serif;
+    color: #eef0f8;
+    text-align: center;
 }
 
 #dropdown-menu a {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    color: #003366;
     font-family: 'Glacial Indifference', sans-serif;
+    color: #ebeff2;
+    font-size: 18px;
+}
+#dropdown-menu a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
 }
 
 #dropdown-menu a:hover {
-    background-color: #ddd;
+    background-color: #6ca5b7;
 }
 li.seaquest-dropdown .dropdown-content {
     display: none;
@@ -456,34 +462,53 @@ li.seaquest-dropdown.active .dropdown-content {
 
 .username-dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
 #user-dropdown {
     display: none;
     position: absolute;
     top: 55px; /* Adjust to match the height of your navbar */
     right: -10px;
-    background-color: white;
-    min-width: 100px;
+    background-color: #000814;
+    transform: translateX(+20%); /* Center-align the dropdown by shifting it left */
+    min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-family: 'Glacial Indifference', sans-serif;
+    color: #eef0f8;
+    text-align: center;
 }
 .user-icon {
     margin-right: 8px; /* Space between the icon and the username */
     font-size: 1.2em; /* Adjust icon size as needed */
-    color: #f8f6f6; /* Color of the icon */
+    color: #f4efef; /* Color of the icon */
+}
+.user-initial {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    background-color: #3498db; /* Circle background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 15px; /* Font size */
+    font-weight: bold;
+    margin-right: 10px; /* Space between the circle and username */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
 }
 
 #user-dropdown a {
-    color: #003366;
+    color: #ebeff2;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family:'Glacial Indifference', sans-serif;
 }
 
 #user-dropdown a:hover {
-    background-color: #ddd;
+    background-color: #6ca5b7;
 }
 .username-dropdown.active #user-dropdown {
     display: block;
@@ -498,6 +523,14 @@ li.seaquest-dropdown.active .dropdown-content {
     align-items: center; /* Center items vertically */
     padding: 0 10px; /* Optional padding to avoid edge contact */
     font-family: 'Glacial Indifference', sans-serif;
+    /*background-color: #9cc1d9*/
+}
+.section-rect {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f2f2f2; /* Light grey background color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a slight 3D effect */
 }
 
 /* Style for Level 6 */
@@ -534,14 +567,7 @@ li.seaquest-dropdown.active .dropdown-content {
     color:#003366;
     margin-left: 15px;
 }
-.custom-line {
-    border: none; /* Remove default border */
-    height: 4px; /* Set the thickness of the line */
-    background-color: #333; /* Set the color of the line */
-    border-radius: 5px; /* Rounded edges */
-    width: 95%; /* Width of the line (almost full width) */
-    margin: 20px ; /* Center the line and add space above/below */
-}
+
 .info-section {
     display: flex;
     justify-content: space-between; /* Aligns the left and right sections */
@@ -652,18 +678,357 @@ li.seaquest-dropdown.active .dropdown-content {
     height: auto; /* Maintain aspect ratio */
 }
 .text-content {
-    max-width: 50%; /* Adjust text width as needed */
+    max-width: 50%; 
     
 }
 .text-content h3 {
     margin-top: -30px;
-    font-size: 2em; /* Adjust heading size */
+    font-size: 2em; 
     color:#003366;
     font-family: 'Glacial Indifference', sans-serif;
 }
 .text-content p {
-    font-size: 20px; /* Adjust paragraph size */
+    font-size: 20px; 
     font-family: 'Glacial Indifference', sans-serif;
     margin-top: 20px;
 }
+.scholar-btn {
+    background-color: #007BFF; 
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    margin-top: 20px; 
+    display: inline-block; 
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background-color 0.3s ease;
+}
+.scholar-btn:hover {
+    background-color: #005f87; 
+}
+
+/*specifically for page2_1*/
+.stats-section {
+    background-color: #acbbca; 
+    width: 100%; 
+    padding-top: 15px; 
+    padding-bottom: 2px;
+    box-sizing: border-box; 
+    margin-top: 85px;
+    height:auto;
+    background-image: linear-gradient(to right, rgb(9, 44, 59) , rgb(177, 224, 244));
+    display:flex; 
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+/* Flexbox for horizontal arrangement of content */
+.row.first-row{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px; 
+    width: 100%;
+
+}
+
+.greeting {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0eaea;
+    text-align: left;
+    margin-left: 40px;
+    margin-top:10px;
+}
+
+.greeting strong {
+    font-size: 24px;
+}
+
+/* Streak row styling */
+.streak-row {
+    display: flex;
+    align-items: center; 
+    /*margin-top: 10px;*/
+    margin-left: auto;
+    margin-right:50px;
+}
+
+/* Fire emoji and number styling */
+.fire-emoji {
+    font-size: 28px; 
+    margin-right: 0px; 
+}
+
+.streak-number {
+    font-size: 28px; 
+    font-weight: bold;
+    margin-right: 5px; 
+}
+
+.week-streak {
+    font-size: 20px;
+    color: #0c0909;
+}
+
+/* Progress bar placeholder */
+.progress-bar-placeholder {
+    height: 10px; 
+    width: 150px; 
+    background-color: #959090; 
+    margin-left: 20px; 
+    border-radius: 5px; 
+}
+/* Styling for the second row */
+.second-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width:100%;
+    margin-left: 40px; 
+    
+}
+.user-info {
+    font-family: 'Glacial Indifference', sans-serif;
+     
+    
+}
+
+.user-info strong {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fbf9f7; 
+}
+
+.user-info span {
+    font-size: 18px;
+    color: #f8f5ef; 
+}
+.points-row {
+    display: flex;
+    align-items: center; 
+    
+    
+    color: #f0eaea; 
+    margin-right:278px;
+}
+.medal-emoji {
+    font-size: 32px; 
+    vertical-align: middle; 
+}
+.points-text{
+    font-size: 20px;
+    color: #0b0907;
+    margin-right: 10px;
+}
+.points-number {
+    font-weight: bold; 
+    font-size: 35px;
+    color: #0a0907;
+}
+
+/*game section*/
+.sea-quest-section {
+    background-image: linear-gradient(#c2b1da,rgb(120, 62, 130), #470163); /* Gradient from light blue to dark green */
+    padding: 30px; 
+    text-align: center; 
+    color: white; 
+    align-items: center;
+}
+.sea-quest-section h2 {
+    font-size: 42px; 
+    margin-bottom: 10px; 
+}
+
+/* Styling for the tagline */
+.tagline {
+    font-size: 22px; 
+    margin-bottom: 10px; 
+}
+
+/* Styling for the image */
+.sea-quest-image {
+    max-width: 60%; 
+    height: auto;
+    border-radius: 50%; 
+    margin-top: 20px; 
+}
+/* Flexbox layout for two columns */
+.two-column-section {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+/* Left column styling */
+.left-column {
+    flex: 1; 
+    padding-right: 20px; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0f0f0;
+    text-align: left;
+}
+
+/* Right column styling */
+.right-column {
+    flex: 1; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: left;
+}
+
+/* Button styling */
+.start-sea-quest {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #080b0d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+.start-sea-quest:hover {
+    background-color: #5d6468; 
+}
+/*split section for Sea scholar and Marine Monitor*/
+
+.split-section {
+    display: flex;
+    height: auto; 
+    width: 100%;
+    gap: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Left half with gradient background */
+.left-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom right,#7cb7cd, #3c9e96, rgb(23, 54, 95));
+    padding: 10px;
+}
+
+/* Right half with gradient background */
+.right-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom left,#8768ab,rgb(79, 67, 169), #182a83);
+    padding: 10px;
+    height: auto;
+}
+/* Sea Scholar Section Styling */
+.sea-scholar-section {
+    display: flex;                     
+    flex-direction: column;           
+    align-items: center;              
+    justify-content: flex-start;           
+    height: auto;                    
+    padding: 0px;                    
+    background: transparent; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* Heading Styling */
+.section-heading {
+    font-size: 42px;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Tagline Styling */
+.section-tagline {
+    
+    font-family: 'Glacial Indifference', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.scholar-icon {
+    font-size: 80px; 
+    color: white; 
+    
+}
+.icon-container {
+    display: flex;                   
+    justify-content: center;         
+    align-items: center;             
+    width: 180px;                    
+    height: 180px;                   
+    border: 2px solid white;      
+    border-radius: 50%;             
+    background: transparent;
+    margin-top: 10px;               
+}
+/*right half marine monitor*/
+.marine-monitor-section {
+    display: flex;                    
+    flex-direction: column;          
+    align-items: center;              
+    justify-content: flex-start;          
+    height: auto;                    
+    padding: 0px;                     
+    background: transparent; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* Same icon container for the news icon */
+.monitor-icon {
+    font-size: 80px;                
+    color: white;                   
+}
+/*left section info*/
+.additional-info-section {
+    display: flex;                    
+    flex-direction: column;           
+    align-items: center;              
+    justify-content: center;           
+    height: auto;                   
+    padding: 20px;                    
+    background: transparent; 
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+/* Button Styling */
+.action-button {
+    margin-top: 10px;                 
+    padding: 10px 20px;               
+    font-size: 20px;                  
+    background-color: #090b0e;       
+    color: white;                     
+    border: none;                     
+    border-radius: 5px;              
+    cursor: pointer;                  
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+.action-button:hover {
+    background-color: #5d6468;       
+}
+
+
+
+
+
+
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Savvy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Glacial+Indifference:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar-->
+    <nav class="navbar">
+        <ul class="nav-left">
+            <li class="menu-icon">
+                <a href="#" id="menu-toggle">&#9776;</a> <!-- Menu icon (hamburger) -->
+            </li>
+            <li class="logo">
+                <a href="index.html" class="nav-brand">Sea Savvy</a>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li class="username-dropdown">
+                <div class="user-initial">I</div>
+                <a href="#" id="username-toggle">Username</a>
+                <div id="user-dropdown" class="dropdown-content">
+                    <a href="#"><i class="fas fa-medal"></i> Points and Rewards</a> <!-- Gem icon -->
+                    <a href="#"><i class="fas fa-user"></i> Profile</a> <!-- Profile icon -->
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a> <!-- Settings icon -->
+                    <a href="#"><i class="fas fa-question-circle"></i> Help Center</a> <!-- Help icon -->
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Logout icon -->
+                </div>
+            </li>
+        </ul>
+        <div id="dropdown-menu" class="dropdown-content">
+            <a href="#"><i class="fas fa-gamepad"></i>Sea Quest</a>
+            <a href="#"><i class="fas fa-book-open"></i>Sea Scholar</a>
+            <a href="#"><i class="fas fa-bullhorn"></i>Marine Monitor</a>
+        </div>
+    </nav>
+
+    <div class="profile-page">
+        <!-- Vertical Menu -->
+        <div class="vertical-menu">
+            <div class="menu-item">
+                <i class="fas fa-medal"></i> Points & Rewards
+            </div>
+            <div class="menu-item selected">
+                <i class="fas fa-user"></i> Profile
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-cog"></i> Settings
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-question-circle"></i> Help Centre
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </div>
+        </div>
+
+        <!-- Profile content -->
+        <div class="profile-content">
+            <h2>Public Profile</h2>
+            <h3>Welcome, Ishan</h3>
+            <div class="profile-input-container">
+                <!-- Username Field -->
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" value="ishanshekharp.ai23" readonly>
+                    <i class="fas fa-pencil-alt edit-icon" onclick="enableEdit('username')"></i>
+                </div>
+            </div>
+            
+            <div class="profile-input-container">
+                <!-- Email Field -->
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" value="ishanshekharp.ai23@rvce.edu.in" readonly>
+                    <i class="fas fa-pencil-alt edit-icon" onclick="enableEdit('email')"></i>
+                </div>
+            </div>
+
+            <div class="profile-input-container">
+                <!-- Password Field -->
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" value="ishan123" readonly>
+                    <i class="fas fa-pencil-alt edit-icon" onclick="enableEdit('password')"></i>
+                </div>
+            </div>
+
+            <div class="profile-input-container">
+                <!-- Role Field -->
+                <label for="role">Role</label>
+                <div class="input-wrapper">
+                    <input type="text" id="role" value="Fisherman" readonly>
+                    <i class="fas fa-pencil-alt edit-icon" onclick="enableEdit('role')"></i>
+                </div>
+            </div>
+
+            <div class="profile-buttons">
+                <button class="save-button" onclick="saveChanges()">Save Changes</button>
+                <button class="discard-button" onclick="discardChanges()">Discard Changes</button>
+                <button class="delete-button" onclick="deleteAccount()">Delete Account</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

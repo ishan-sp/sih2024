@@ -210,7 +210,7 @@ h1 {
 }
 
 /* Left side*/
-.left-half {
+.left-half1 {
     flex: 1; 
     display: flex;
     justify-content: center; 
@@ -232,7 +232,7 @@ h1 {
 }
 
 /* Right half  */
-.right-half {
+.right-half1 {
     flex: 1; 
     display: flex;
     justify-content: center; 
@@ -713,14 +713,14 @@ li.seaquest-dropdown.active .dropdown-content {
 
 /*specifically for page2_1*/
 .stats-section {
-    background-color: #acbbca; 
+    
+    background-image: linear-gradient(to right, rgb(26, 106, 155), rgb(208, 240, 248));
     width: 100%; 
     padding-top: 15px; 
     padding-bottom: 2px;
     box-sizing: border-box; 
     margin-top: 85px;
     height:auto;
-    background-image: linear-gradient(to right, rgb(9, 44, 59) , rgb(177, 224, 244));
     display:flex; 
     flex-direction: column;
     padding-bottom: 15px;
@@ -731,7 +731,7 @@ li.seaquest-dropdown.active .dropdown-content {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
     width: 100%;
 
 }
@@ -794,8 +794,6 @@ li.seaquest-dropdown.active .dropdown-content {
 }
 .user-info {
     font-family: 'Glacial Indifference', sans-serif;
-     
-    
 }
 
 .user-info strong {
@@ -833,28 +831,36 @@ li.seaquest-dropdown.active .dropdown-content {
 
 /*game section*/
 .sea-quest-section {
-    background-image: linear-gradient(#c2b1da,rgb(120, 62, 130), #470163); /* Gradient from light blue to dark green */
+    background-color: white;
     padding: 30px; 
-    text-align: center; 
-    color: white; 
-    align-items: center;
+    
+    color: rgb(15, 11, 11); 
+    
 }
 .sea-quest-section h2 {
-    font-size: 42px; 
-    margin-bottom: 10px; 
+    font-size: 48px; 
+    margin-bottom: 15px;
+    font-family: 'League Spartan', sans-serif;
+    background: -webkit-linear-gradient(#0f0f57, #4db2e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
 }
 
 /* Styling for the tagline */
 .tagline {
     font-size: 22px; 
-    margin-bottom: 10px; 
+    margin-bottom: 15px; 
 }
 
 /* Styling for the image */
 .sea-quest-image {
-    max-width: 60%; 
+    max-width: 80%; 
     height: auto;
-    border-radius: 50%; 
+    border-radius: 10px;
+    text-align: right;
+    align-items: right;
+    
     margin-top: 20px; 
 }
 /* Flexbox layout for two columns */
@@ -870,7 +876,7 @@ li.seaquest-dropdown.active .dropdown-content {
     padding-right: 20px; 
     font-family: 'Glacial Indifference', sans-serif;
     font-size: 18px;
-    color: #f0f0f0;
+    color: #111010;
     text-align: left;
 }
 
@@ -879,7 +885,7 @@ li.seaquest-dropdown.active .dropdown-content {
     flex: 1; 
     font-family: 'Glacial Indifference', sans-serif;
     font-size: 18px;
-    color: #f0f0f0;
+    color: #0d0c0c;
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -890,16 +896,16 @@ li.seaquest-dropdown.active .dropdown-content {
 .start-sea-quest {
     padding: 10px 20px;
     font-size: 20px;
-    background-color: #080b0d;
+    background-image: linear-gradient(to right, rgb(19, 76, 112), rgb(76, 138, 153));
     color: white;
     border: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
     cursor: pointer;
     font-family: 'Glacial Indifference', sans-serif;
 }
 .start-sea-quest:hover {
-    background-color: #5d6468; 
+    background-image: linear-gradient(to right, rgb(8, 34, 50), rgb(63, 113, 125));
 }
 /*split section for Sea scholar and Marine Monitor*/
 
@@ -1024,6 +1030,218 @@ li.seaquest-dropdown.active .dropdown-content {
 
 .action-button:hover {
     background-color: #5d6468;       
+}
+
+/*profile.html*/
+.profile-page {
+    display: flex; 
+    height: 100vh; 
+    margin-top: 80px;
+}
+
+/* Vertical menu styling */
+.vertical-menu {
+    width: 250px; 
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 5px; 
+    font-family: 'Glacial Indifference', sans-serif ;
+    
+}
+
+/* Individual menu item styling */
+.menu-item {
+    display: flex;
+    
+    text-align: center;
+    padding: 10px;
+    color: rgb(105, 103, 103);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Glacial Indifference', sans-serif ;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 20px;
+    
+}
+
+/* Icon styling */
+.menu-item i {
+    margin-right: 15px; 
+    font-size: 20px;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+    background-color: #a6bfe0;
+    color: #0056b3;
+}
+
+/* Highlight the selected menu item */
+.menu-item.selected {
+    background-color: #a6bfe0; 
+    font-weight: bold;
+    color: #0056b3;
+}
+
+/* Profile content area */
+.profile-content {
+    flex: 1; 
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: #f9f9f9; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.profile-content h2 {
+    font-size: 24px;
+    color: #222e3f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+.profile-content h3 {
+    font-size: 18px;
+    color: #222e3f;
+    margin-bottom: 15px;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+.profile-input-container {
+    width: 100%;
+    max-width: 450px; 
+    padding: 5px;
+    margin: 0 auto; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+}
+/* Label Styling */
+.profile-content label {
+    font-size: 16px;
+    font-family: 'Glacial Indifference', sans-serif ;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    color: #007BFF;
+}
+
+/* Text boxes */
+.profile-content input {
+    width: 100%;
+    max-width: 450px; 
+    padding: 10px;
+    margin-bottom: 10px;;
+    font-size: 16px;
+    color: #1a1616;
+    background-color: #e8ebec;
+    border: 1px solid #0b0a0a;
+    text-align: left;
+    font-family: 'Glacial Indifference', sans-serif ;
+}
+
+/* Disable input editing */
+input[readonly] {
+    cursor: not-allowed;
+    color: #555;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Input box styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Edit icon styling */
+.edit-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #007BFF;
+    padding-bottom: 4px;
+}
+
+/* Edit icon hover effect */
+.edit-icon:hover {
+    color: #0056b3;
+}
+
+/* Profile buttons styling */
+.profile-buttons {
+    display: flex;
+    justify-content: space-around; /* Spread buttons horizontally */
+    
+    max-width: 450px;
+    margin-top: 15px;
+    text-align: center;
+    align-items: center;
+    margin-left: 260px;
+    font-family: 'Glacial Indifference', sans-serif ;
+    
+}
+
+
+/* Individual button styling */
+button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Save button */
+.save-button {
+    background-color: rgb(33, 137, 52) ;
+    color: rgb(255, 255, 255);
+}
+
+.save-button:hover {
+    
+    background-color: #a6bfe0;
+    color: #0056b3;
+}
+
+/* Discard button */
+.discard-button {
+    background-color: rgb(105, 103, 103);
+    color: white;
+    
+}
+
+.discard-button:hover {
+    
+    background-color: #a6bfe0;
+    color: #0056b3;
+}
+
+/* Delete button */
+.delete-button {
+    background-color: rgb(210, 40, 40);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #a6bfe0;
+    color: #0056b3;
 }
 
 

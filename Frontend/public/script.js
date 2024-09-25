@@ -53,3 +53,78 @@ function enableEdit(inputId) {
         icon.classList.add('fa-pencil-alt'); // Change icon back to edit
     }
 }
+
+function openChatbot() {
+    document.getElementById('chatbot-window').style.display = 'flex';
+}
+
+// Function to close the chatbot window
+function closeChatbot() {
+    document.getElementById('chatbot-window').style.display = 'none';
+}
+
+// Handle the "Enter" key press for sending messages
+function handleInput(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+}
+
+// Function to send the message
+
+function selectPrompt(promptText) {
+    document.getElementById("chatbox").value = promptText;
+}
+function selectPrompt(promptText) {
+    const chatInput = document.getElementById("chatbox");
+    const sendButton = document.getElementById("send-btn");
+
+    // Set the selected prompt text in the input field
+    chatInput.value = promptText;
+
+    // Enable the send button since a prompt was selected
+    sendButton.disabled = false;
+}
+
+
+// Function to check if input box has content
+function checkInput() {
+    const chatInput = document.getElementById("chatbox");
+    const sendButton = document.getElementById("send-btn");
+
+    // Log current value for debugging
+    console.log(`Current input value: "${chatInput.value.trim()}"`);
+
+    if (chatInput.value.trim() === "") {
+        sendButton.disabled = true;  // Disable the button if the input is empty
+        sendButton.style.cursor = "not-allowed";  // Change cursor to indicate disabled state
+    } else {
+        sendButton.disabled = false;  // Enable the button if the input has text
+        sendButton.style.cursor = "pointer";  // Change cursor to indicate it's clickable
+    }
+}
+
+// Function to send the message
+function sendMessage() {
+    const chatInput = document.getElementById("chatbox");
+    const message = chatInput.value.trim();
+    console.log("Message sent: ", message);
+    if (message !== "") {
+        // Add message to chat content
+        const chatContent = document.querySelector('.chat-content');
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('user-message');
+        newMessage.textContent = message;
+        chatContent.appendChild(newMessage);
+
+        // Clear input box
+        chatInput.value = "";
+        document.getElementById("send-btn").disabled = true; // Disable the button again after sending
+
+        // Hide suggested prompts once message is sent
+        document.querySelector('.suggested-prompts').style.display = 'none';
+    }
+}
+
+
+

@@ -108,23 +108,32 @@ function checkInput() {
 function sendMessage() {
     const chatInput = document.getElementById("chatbox");
     const message = chatInput.value.trim();
-    console.log("Message sent: ", message);
     if (message !== "") {
-        // Add message to chat content
-        const chatContent = document.querySelector('.chat-content');
-        const newMessage = document.createElement('div');
-        newMessage.classList.add('user-message');
-        newMessage.textContent = message;
-        chatContent.appendChild(newMessage);
-
-        // Clear input box
-        chatInput.value = "";
-        document.getElementById("send-btn").disabled = true; // Disable the button again after sending
-
-        // Hide suggested prompts once message is sent
-        document.querySelector('.suggested-prompts').style.display = 'none';
+        fetch("/message", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ usermsg: message })  // Correct: stringified JSON
+        })
+        .then(response => response.json())
+        .then(data => {
+            const chatContent = document.querySelector('.chat-messages'); // Ensure this selector matches your chat container
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('user-message');
+            userMessage.textContent = message;
+            chatContent.appendChild(userMessage);
+            chatContent.scrollTop = chatContent.scrollHeight;
+            chatInput.value = "";
+            document.getElementById("send-btn").disabled = true; 
+            document.querySelector('.suggested-prompts').style.display = 'none';
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('bot-message');
+            botMessage.textContent = data.response;
+            chatContent.appendChild(botMessage);
+            chatContent.scrollTop = chatContent.scrollHeight;
+            document.getElementById("send-btn").disabled = false;
+        });
+        
     }
 }
-
-
-

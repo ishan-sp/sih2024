@@ -11,6 +11,7 @@ Ensure you have the following installed:
 ## Installation and execution
    ```bash
   git clone https://github.com/ishan-sp/sih2024.git
+   cd sih2024
    cd Frontend
    npm install
    node index.js

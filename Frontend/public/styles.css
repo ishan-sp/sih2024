@@ -1382,5 +1382,60 @@ button {
 #send-btn:hover:enabled {
     background-color: #193d62;
 }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px; /* Reduce padding */
+    }
 
+    .navbar .logo {
+        font-size: 36px; /* Decrease logo size */
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px; /* Decrease link size */
+        margin-left: 10px; /* Adjust margin */
+    }
+
+    .landing h1 {
+        font-size: 28px; /* Decrease heading size */
+    }
+
+    .about-content {
+        max-width: 90%; /* Allow more width on mobile */
+    }
+
+    .split-container {
+        flex-direction: column; /* Stack left and right halves */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .left-half1, .right-half1 {
+        width: 100%; /* Full width for each half */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .login-form, .signup-form {
+        width: 90%; /* Make forms responsive */
+        padding: 15px; /* Increase padding for touch targets */
+    }
+
+    .social-media {
+        flex-direction: column; /* Stack social icons vertically */
+    }
+
+    .image-text-section, .image-text-section-reverse {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .image-text-section img, 
+    .image-text-section-reverse img {
+        width: 100%; /* Make images responsive */
+        height: auto;
+    }
+}
+.navbar {
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+}
 

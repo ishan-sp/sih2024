@@ -1,1 +1,1 @@
-{"username":"awdwa","email":"awdwa@gg","password":"awd","role":"fisherman","points":0,"streak":0,"level":0}
+{"email":"hemanth27.sadhu@gmail.com","password":"sad"}

@@ -31,7 +31,7 @@ const generationConfig = {
     temperature: 1,
     topP: 0.95,
     topK: 64,
-    maxOutputTokens: 8192,
+    maxOutputTokens: 100,
     responseMimeType: "text/plain",
   };
 
@@ -80,6 +80,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(morgan('combined', { stream: accessLogStream }));
 app.use(bodyParser.json());
 
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
 });
@@ -96,7 +97,7 @@ app.post("/login", (req, res) => {
     res.redirect("/main");
 });
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
     console.log("new signup request\n");
     req.body.points = 0;
     req.body.streak = 0;

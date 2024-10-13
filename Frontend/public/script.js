@@ -114,7 +114,7 @@ function sendMessage() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ usermsg: message })  // Correct: stringified JSON
+            body: JSON.stringify({ usermsg: message })
         })
         .then(response => response.json())
         .then(data => {

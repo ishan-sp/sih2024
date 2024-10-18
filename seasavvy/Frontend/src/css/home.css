@@ -1,0 +1,836 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar .logo a{
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+    text-decoration: none;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.nav-right li a {
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+.menu-icon a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#dropdown-menu {
+    display: none;  /*Hidden initially */
+    position: fixed;
+    top: 85px;
+    left: 10px;
+    background-color: #000814;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width:180px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+
+#dropdown-menu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ebeff2;
+    font-size: 18px;
+}
+#dropdown-menu a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+#dropdown-menu a:hover {
+    background-color: #6ca5b7;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+li {
+    margin-right: 20px;
+}
+li.seaquest-dropdown .dropdown-content {
+    display: none;
+}
+
+li.seaquest-dropdown.active .dropdown-content {
+    display: block;
+}
+.username-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#user-dropdown {
+    display: none;
+    position: fixed;
+    top: 85px; /* Adjust to match the height of your navbar */
+    right: 10px;
+    background-color: #000814;
+    font-family: 'Source Sans Pro', sans-serif;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+.user-icon {
+    margin-right: 8px; /* Space between the icon and the username */
+    font-size: 1.2em; /* Adjust icon size as needed */
+    color: #f4efef; /* Color of the icon */
+}
+.user-initial {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    background-color: #3498db; /* Circle background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 15px; /* Font size */
+    font-weight: bold;
+    margin-right: 10px; /* Space between the circle and username */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#user-dropdown a {
+    color: #ebeff2;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#user-dropdown a:hover {
+    background-color: #6ca5b7;
+}
+.username-dropdown.active #user-dropdown {
+    display: block;
+}
+.stats-section {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: linear-gradient(to right, rgb(26, 106, 155), rgb(208, 240, 248));
+    width: 100%; 
+    padding-top: 15px; 
+    
+    box-sizing: border-box; 
+    height:auto;
+    display:flex; 
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+/* Flexbox for horizontal arrangement of content */
+.row.first-row{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 30px; 
+    width: 100%;
+
+}
+.greeting {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: #f0eaea;
+    text-align: left;
+    margin-left: 40px;
+    margin-top:10px;
+}
+
+.greeting strong {
+    font-size: 24px;
+}
+
+/* Streak row styling */
+.streak-row {
+    display: flex;
+    align-items: center; 
+    /*margin-top: 10px;*/
+    margin-left: auto;
+    margin-right:50px;
+}
+
+/* Fire emoji and number styling */
+.fire-emoji {
+    font-size: 28px; 
+    margin-right: 0px; 
+}
+
+.streak-number {
+    font-size: 28px; 
+    font-weight: bold;
+    margin-right: 5px; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.week-streak {
+    font-size: 20px;
+    color: #0c0909;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Progress bar placeholder */
+.progress-bar-placeholder {
+    height: 10px; 
+    width: 150px; 
+    background-color: #959090; 
+    margin-left: 20px; 
+    border-radius: 5px; 
+}
+/* Styling for the second row */
+.second-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    width:100%;
+    margin-left: 40px; 
+    
+}
+.user-info {
+    font-family: 'Source Sans Pro', sans-serif;
+    flex: 1; 
+}
+
+.user-info strong {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fbf9f7; 
+}
+
+.user-info span {
+    font-size: 18px;
+    color: #f8f5ef; 
+}
+.points-row {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    flex-shrink: 0;
+    color: #f0eaea; 
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-right:278px;
+}
+.medal-emoji {
+    font-size: 32px; 
+    vertical-align: middle; 
+}
+.points-text{
+    font-size: 20px;
+    color: #0b0907;
+    margin-right: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.points-number {
+    font-weight: bold; 
+    font-size: 35px;
+    color: #0a0907;
+}
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 15px;
+    }
+
+    .row.first-row {
+        flex-direction: column;
+        align-items: flex-start; /* Stack items vertically */
+        width: 100%;
+    }
+
+    .greeting {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .greeting strong {
+        font-size: 20px;
+    }
+
+    .streak-row {
+        justify-content: flex-start;
+        
+    }
+
+    .second-row {
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .points-row {
+        margin-left: 20px;
+        justify-content: flex-end;
+    }
+
+    /* Adjust font sizes */
+    .points-number {
+        font-size: 24px;
+    }
+
+    .points-text, .week-streak {
+        font-size: 16px;
+    }
+}
+.chatbot-icon {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Chatbot Container 
+.chatbot-container {
+    position: fixed;
+    bottom: 0;
+    
+    width: 100vh;
+    height: 100vh;
+   
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default 
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 5px;
+}*/
+.chatbot-container {
+    position: fixed;
+    top: 0; /* Position the container at the top */
+    left: 0; /* Position the container at the left */
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+   
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 0; /* Optional: Remove border radius for full-screen */
+    
+    /* Optional: Ensure padding and borders are included in the total size */
+    box-sizing: border-box;
+    overflow: auto;
+
+    /* Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+.chatbot-container::-webkit-scrollbar {
+    display: none;
+}
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* Chatbot Header */
+.chatbot-header {
+    background-color: #ccccd1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 26px;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+.chatbot-header h2 {
+    background: -webkit-linear-gradient(#1e7b75, #1d0781);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
+    font-family: 'League Spartan', sans-serif;
+    margin: 15px;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto; 
+    margin-right: 15px;
+}
+
+/* Chat Body */
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-messages {
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Input Area */
+.chatbot-input-area {
+    display: flex;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+#chatbox {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+.suggested-prompts {
+    display: flex;
+    margin-bottom: 10px; /* Space before the chat content */
+    flex-wrap: wrap; /* Allow prompts to wrap to the next line */
+    justify-content: space-between;
+    width: 100%; 
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span {
+    background-color: #93b9c4;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    display: inline-block; /* Treat each as inline elements */
+    flex: 1; /* Ensure each prompt takes up equal space */
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span:hover {
+    background-color: #dcd8d8;
+    transform: scale(1.04);
+}
+
+.suggested-prompts span:active {
+    background-color: #d0d0d0;
+}
+.user-message { /*for sent messages*/
+    background-color: #638ab4;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    align-self: flex-end; /* Align the message to the right */
+    max-width: 70%;
+    word-wrap: break-word;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#send-btn:disabled {
+    background-color: #c6c2c2;
+    cursor: not-allowed;
+}
+#send-btn {
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#send-btn:enabled {
+    background-color: #3b5ea4;
+    cursor: pointer;
+}
+
+#send-btn:hover:enabled {
+    background-color: #193d62;
+}
+
+/*responsiveness*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack the navbar elements vertically */
+        padding: 10px 20px;
+        
+        justify-content: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 100%; /* Full width for both left and right nav sections */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%; 
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .nav-left {
+        justify-content: center;
+        margin-bottom: 10px; /* Add space between the nav-left and nav-right sections */
+    }
+
+    .nav-left .logo {
+        font-size: 30px; /* Smaller font size for the Sea Savvy logo */
+    }
+
+    /* Stack username dropdown and chatbot horizontally under the Sea Savvy */
+    .nav-right {
+        flex-direction: row; /* Stack horizontally */
+        justify-content: center; /* Space between the elements */
+        width: 100%; /* Ensure the nav-right takes full width */
+    }
+
+    .username-dropdown {
+        
+        text-align: left; /* Align dropdown to the left */
+    }
+
+    .chatbot-icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+    }
+
+    #dropdown-menu {
+        width: auto;
+    }
+
+    /* Adjust dropdown and chatbot icon positioning */
+    .user-initial {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
+        
+    }
+
+    .chatbot-header {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .chatbot-header h2 {
+        font-size: 40px;  /* Adjust size of the chatbot header */
+    }
+    .chatbot-icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+    }
+
+    .chatbot-body {
+        padding: 10px;
+    }
+
+    .chatbot-input-area {
+        flex-wrap: nowrap;  /* Prevent wrapping input and button */
+    }
+
+    #chatbox {
+        width: calc(100% - 70px);  /* Reduce width to accommodate button */
+    }
+
+    #send-btn {
+        padding: 8px 10px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-header h2 {
+        font-size: 18px;
+    }
+
+    .chatbot-body {
+        font-size: 14px;
+    }
+
+    .suggested-prompts span {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    #chatbox {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    #user-dropdown {
+        right: 0;  /* Align to right */
+        width: auto;  /* Full width on mobile */
+        transform: none;  /* Remove the center alignment */
+    }
+
+    .user-initial {
+        width: 25px;  /* Smaller size */
+        height: 25px;
+        font-size: 12px;
+    }
+
+    #user-dropdown a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+
+.sea-quest-section {
+    background-color: white;
+    padding: 25px; 
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(15, 11, 11); 
+    
+}
+.sea-quest-section h2 {
+    font-size: 44px; 
+    margin-bottom: 10px;
+    font-family: 'League Spartan', sans-serif;
+    background: -webkit-linear-gradient(#0f0f57, #4db2e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
+}
+
+/* Styling for the tagline */
+.tagline {
+    font-size: 22px; 
+    margin-bottom: 15px; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Styling for the image */
+.sea-quest-image {
+    max-width: 85%; 
+    height: auto;
+    border-radius: 10px;
+    text-align: right;
+    align-items: right;
+    
+    margin-top: 20px; 
+}
+/* Flexbox layout for two columns */
+.two-column-section {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+/* Left column styling */
+.left-column {
+    flex: 1; 
+    padding-right: 20px; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: #111010;
+    text-align: left;
+}
+
+/* Right column styling */
+.right-column {
+    flex: 1; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: #0d0c0c;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: left;
+}
+
+/* Button styling */
+.start-sea-quest {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-image: linear-gradient(to right, rgb(19, 76, 112), rgb(76, 138, 153));
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.start-sea-quest:hover {
+    background-image: linear-gradient(to right, rgb(8, 34, 50), rgb(63, 113, 125));
+}
+@media (max-width: 768px) {
+    .two-column-section {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+    .left-column {
+        padding-right: 0; /* Remove right padding on smaller screens */
+        margin-bottom: 20px; /* Add space between columns */
+    }
+    .sea-quest-section{
+        padding: 20px;
+    }
+    .sea-quest-section h2 {
+        font-size: 34px; /* Adjust heading size for smaller screens */
+    }
+    .tagline {
+        font-size: 16px; /* Adjust tagline size */
+    }
+    .start-sea-quest {
+        font-size: 16px; /* Adjust button size */
+    }
+}
+
+.about-us {
+    padding: 15px 30px; 
+    background-color: #669bab; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    /*margin-top: 20px; 
+    width: 100%;*/
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #fcfcfc; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .social-media {
+        justify-content: center; /* Center the icons for mobile */
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        font-size: 25px; /* Decrease the size for smaller screens */
+    }
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .contact-info-container {
+        flex-direction: column; /* Stack the email and icons vertically on small screens */
+        align-items: center;
+        text-align: center;
+    }
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #fcfcfc;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}
+

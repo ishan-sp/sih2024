@@ -1,0 +1,817 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar .logo a{
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+    text-decoration: none;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.nav-right li a {
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+.menu-icon a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#dropdown-menu {
+    display: none;  /*Hidden initially */
+    position: fixed;
+    top: 85px;
+    left: 10px;
+    background-color: #000814;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width:180px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+
+#dropdown-menu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ebeff2;
+    font-size: 18px;
+}
+#dropdown-menu a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+#dropdown-menu a:hover {
+    background-color: #6ca5b7;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+li {
+    margin-right: 20px;
+}
+li.seaquest-dropdown .dropdown-content {
+    display: none;
+}
+
+li.seaquest-dropdown.active .dropdown-content {
+    display: block;
+}
+.username-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#user-dropdown {
+    display: none;
+    position: fixed;
+    top: 85px; /* Adjust to match the height of your navbar */
+    right: 10px;
+    background-color: #000814;
+    font-family: 'Source Sans Pro', sans-serif;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #eef0f8;
+    text-align: center;
+}
+.user-icon {
+    margin-right: 8px; /* Space between the icon and the username */
+    font-size: 1.2em; /* Adjust icon size as needed */
+    color: #f4efef; /* Color of the icon */
+}
+.user-initial {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    background-color: #3498db; /* Circle background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 15px; /* Font size */
+    font-weight: bold;
+    margin-right: 10px; /* Space between the circle and username */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#user-dropdown a {
+    color: #ebeff2;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#user-dropdown a:hover {
+    background-color: #6ca5b7;
+}
+.username-dropdown.active #user-dropdown {
+    display: block;
+}
+.chatbot-icon {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+.chatbot-container {
+    position: fixed;
+    top: 0; /* Position the container at the top */
+    left: 0; /* Position the container at the left */
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+   
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 0; /* Optional: Remove border radius for full-screen */
+    
+    /* Optional: Ensure padding and borders are included in the total size */
+    box-sizing: border-box;
+    overflow: auto;
+
+    /* Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+.chatbot-container::-webkit-scrollbar {
+    display: none;
+}
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* Chatbot Header */
+.chatbot-header {
+    background-color: #ccccd1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 26px;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+.chatbot-header h2 {
+    background: -webkit-linear-gradient(#1e7b75, #1d0781);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
+    font-family: 'League Spartan', sans-serif;
+    margin: 15px;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto; 
+    margin-right: 15px;
+}
+
+/* Chat Body */
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-messages {
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Input Area */
+.chatbot-input-area {
+    display: flex;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+#chatbox {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+.suggested-prompts {
+    display: flex;
+    margin-bottom: 10px; /* Space before the chat content */
+    flex-wrap: wrap; /* Allow prompts to wrap to the next line */
+    justify-content: space-between;
+    width: 100%; 
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span {
+    background-color: #93b9c4;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    display: inline-block; /* Treat each as inline elements */
+    flex: 1; /* Ensure each prompt takes up equal space */
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span:hover {
+    background-color: #dcd8d8;
+    transform: scale(1.04);
+}
+
+.suggested-prompts span:active {
+    background-color: #d0d0d0;
+}
+.user-message { /*for sent messages*/
+    background-color: #638ab4;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    align-self: flex-end; /* Align the message to the right */
+    max-width: 70%;
+    word-wrap: break-word;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#send-btn:disabled {
+    background-color: #c6c2c2;
+    cursor: not-allowed;
+}
+#send-btn {
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#send-btn:enabled {
+    background-color: #3b5ea4;
+    cursor: pointer;
+}
+
+#send-btn:hover:enabled {
+    background-color: #193d62;
+}
+
+/*responsiveness*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack the navbar elements vertically */
+        padding: 10px 20px;
+        
+        justify-content: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 100%; /* Full width for both left and right nav sections */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%; 
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .nav-left {
+        justify-content: center;
+        margin-bottom: 10px; /* Add space between the nav-left and nav-right sections */
+    }
+
+    .nav-left .logo {
+        font-size: 30px; /* Smaller font size for the Sea Savvy logo */
+    }
+
+    /* Stack username dropdown and chatbot horizontally under the Sea Savvy */
+    .nav-right {
+        flex-direction: row; /* Stack horizontally */
+        justify-content: center; /* Space between the elements */
+        width: 100%; /* Ensure the nav-right takes full width */
+    }
+
+    .username-dropdown {
+        
+        text-align: left; /* Align dropdown to the left */
+    }
+
+    .chatbot-icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+    }
+
+    #dropdown-menu {
+        width: auto;
+    }
+
+    /* Adjust dropdown and chatbot icon positioning */
+    .user-initial {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
+        
+    }
+
+    .chatbot-header {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .chatbot-header h2 {
+        font-size: 40px;  /* Adjust size of the chatbot header */
+    }
+    .chatbot-icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+    }
+
+    .chatbot-body {
+        padding: 10px;
+    }
+
+    .chatbot-input-area {
+        flex-wrap: nowrap;  /* Prevent wrapping input and button */
+    }
+
+    #chatbox {
+        width: calc(100% - 70px);  /* Reduce width to accommodate button */
+    }
+
+    #send-btn {
+        padding: 8px 10px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-header h2 {
+        font-size: 18px;
+    }
+
+    .chatbot-body {
+        font-size: 14px;
+    }
+
+    .suggested-prompts span {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    #chatbox {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    #user-dropdown {
+        right: 0;  /* Align to right */
+        width: auto;  /* Full width on mobile */
+        transform: none;  /* Remove the center alignment */
+    }
+
+    .user-initial {
+        width: 25px;  /* Smaller size */
+        height: 25px;
+        font-size: 12px;
+    }
+
+    #user-dropdown a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+.about-us {
+    padding: 15px 30px; 
+    background-color: #669bab; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    /*margin-top: 20px; 
+    width: 100%;*/
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #fcfcfc; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .social-media {
+        justify-content: center; /* Center the icons for mobile */
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        font-size: 25px; /* Decrease the size for smaller screens */
+    }
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .contact-info-container {
+        flex-direction: column; /* Stack the email and icons vertically on small screens */
+        align-items: center;
+        text-align: center;
+    }
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #fcfcfc;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}
+
+/*profile.html*/
+.profile-page {
+    display: flex; 
+    flex-direction: row;
+    height: 100vh;
+    margin-top: 80px;
+    width: 100%; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Vertical menu styling */
+.vertical-menu {
+    width: 250px;
+    background-color: rgb(236, 233, 233);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+/* Individual menu item styling */
+.menu-item {
+    display: flex;
+    
+    text-align: center;
+    padding: 10px;
+    color: rgb(125, 120, 120);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    
+}
+
+/* Icon styling */
+.menu-item i {
+    margin-right: 15px; 
+    font-size: 20px;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+    background-color: #6ca5b7;
+    color: #fafcff;
+}
+
+/* Highlight the selected menu item */
+.menu-item.selected {
+    background-color: #6ca5b7; 
+    font-weight: bold;
+    color: #eff1f3;
+}
+
+/* Profile content area */
+.profile-content {
+    flex: 1; 
+    
+    padding: 20px;
+    
+    background-color: #f9f9f9; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.profile-content h2 {
+    font-size: 24px;
+    color: #222e3f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.profile-content h3 {
+    font-size: 18px;
+    color: #222e3f;
+    margin-bottom: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.profile-input-container {
+    width: 100%;
+    max-width: 450px; 
+    padding: 5px;
+    margin: 0 auto; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+}
+/* Label Styling */
+.profile-content label {
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    color: #6ca5b7;
+}
+
+/* Text boxes */
+.profile-content input {
+    width: 100%;
+    max-width: 450px; 
+    padding: 10px;
+    margin-bottom: 10px;;
+    font-size: 16px;
+    color: #1a1616;
+    background-color: #e8ebec;
+    border: 1px solid #0b0a0a;
+    text-align: left;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Disable input editing */
+input[readonly] {
+    cursor: not-allowed;
+    color: #555;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Input box styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Edit icon styling */
+.edit-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #6ca5b7;
+    padding-bottom: 4px;
+}
+
+/* Edit icon hover effect */
+.edit-icon:hover {
+    color: #0056b3;
+}
+
+/* Profile buttons styling */
+.profile-buttons {
+    display: flex;
+    
+    justify-content: space-around; /* Spread buttons horizontally */
+    
+    max-width: 450px;
+    margin-top: 15px;
+    text-align: center;
+    align-items: center;
+    margin:0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+/* Individual button styling */
+button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+
+/* Save button */
+.save-button {
+    background-color: rgb(33, 137, 52) ;
+    color: rgb(255, 255, 255);
+}
+
+.save-button:hover {
+    
+    background-color: #6ca5b7;
+    color: white;
+}
+
+/* Discard button */
+.discard-button {
+    background-color: rgb(105, 103, 103);
+    color: white;
+    
+}
+
+.discard-button:hover {
+    
+    background-color: #6ca5b7;
+    color: white;
+}
+
+/* Delete button */
+.delete-button {
+    background-color: rgb(210, 40, 40);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #6ca5b7;
+    color: white;
+}
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    /* Profile Page layout for small screens */
+    .profile-page {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        height: auto; /* Remove fixed height */
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    /* Vertical menu adjustments for small screens */
+    .vertical-menu {
+        width: 100%; /* Full width on smaller screens */
+        max-width: none;
+        padding-left: 0; /* Remove unnecessary padding */
+        
+        margin-bottom: 20px; /* Add some margin below the menu */
+    }
+
+    /* Adjust menu items */
+    .menu-item {
+        
+        justify-content: center; /* Center the content */
+    }
+
+    /* Profile content adjustments */
+    .profile-content {
+        padding: 10px;
+        text-align: left; /* Align text to the left */
+    }
+
+    .profile-input-container {
+        width: 100%;
+    }
+    .profile-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; /* Spread buttons horizontally */
+        margin-left: 0; /* Remove left margin */
+        
+        margin-top: 15px;
+        text-align: center;
+        align-items: center;
+        margin:0 auto;
+        font-family: 'Glacial Indifference', sans-serif ;
+        
+    }
+
+    button {
+        margin-bottom: 10px; /* Space between buttons */
+    }
+}

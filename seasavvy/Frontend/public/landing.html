@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Savvy</title>
+    <link rel="stylesheet" href="src/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Glacial+Indifference:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><a href="/" class="nav-brand">Sea Savvy</a></div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <button class="btn login-btn" onclick="navigateTo('/login')">Login</button>
+            <button class="btn signup-btn" onclick="navigateTo('/signup')">Signup</button>
+        </div>
+        <script>
+            function navigateTo(route) {
+                fetch(route, { method: 'GET' })
+                    .then(response => response.text())
+                    .then(html => {
+                        document.open();
+                        document.write(html);
+                        document.close();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        </script>        
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing">
+        <video autoplay muted loop class="bg-video">
+            <source src="/videos/landing.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="overlay-content">
+            <h1>Your one-stop gateway to <br>the wonders of the ocean!</h1>
+        </div>
+    </section>   
+
+    <section class="about-us">
+        <div class="about-header">
+            <h2>About Us</h2>
+        </div>
+        <div class="about-content">
+            <p>We are passionate about ocean literacy and strive to bring awareness about marine conservation and ocean science.</p>
+        </div>
+        <div class="contact-info-container">
+            <a href="mailto:seasavvy@example.com" class="email-link">
+                <i class="fas fa-envelope"></i> seasavvy@gmail.com
+            </a>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

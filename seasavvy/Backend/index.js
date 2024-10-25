@@ -9,6 +9,7 @@ import signupRouter from "./routes/signUp.js";
 import loginRouter from "./routes/login.js";
 import homeRouter from "./routes/home.js";
 import profileRouter from "./routes/profile.js";
+import eduRouter from "./routes/seascholar.js";
 import {
     GoogleGenerativeAI,
     HarmCategory,
@@ -111,6 +112,7 @@ app.get("/", (req, res) => {
     const sessionUserId = req.session.userId;
     if(sessionUserId) {
         res.redirect("/home");
+        return;
     }
     res.sendFile(path.join(__dirname, "../Frontend/public/landing.html"));
 });
@@ -127,6 +129,7 @@ app.get('/logout', (req, res) => {
       res.redirect("/");
   });
 });
+app.use("/sea-scholar", eduRouter);
 
 app.post("/message", (req, res) => {
     const qr = req.body;

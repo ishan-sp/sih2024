@@ -1,0 +1,1252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000814;
+    padding: 15px 30px;
+    position: static;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.navbar .logo a{
+    color: #f2f2f7;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif; 
+    text-decoration: none;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.nav-right li a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: rgb(14, 9, 9);
+    text-decoration: none;
+    z-index: 3000;
+}
+.menu-icon {
+    position: relative; /* Ensures dropdown is positioned relative to the menu icon */
+}
+.menu-icon a {
+    font-size: 24px;
+    color: rgb(19, 17, 17);
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    
+}
+#dropdown-menu {
+    display: none;  /*Hidden initially */
+    position: absolute;
+    top: 165px;
+    background-color: #fbfcfc;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    width:180px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #08090b;
+    text-align: center;
+}
+
+#dropdown-menu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #050607;
+    font-size: 18px;
+}
+#dropdown-menu a i {
+    margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+#dropdown-menu a:hover {
+    background-color: #6ca5b7;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+li {
+    margin-right: 20px;
+}
+li.seaquest-dropdown .dropdown-content {
+    display: none;
+}
+
+li.seaquest-dropdown.active .dropdown-content {
+    display: block;
+}
+.username-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    z-index: 3000;
+}
+
+.user-icon {
+    margin-right: 8px; /* Space between the icon and the username */
+    font-size: 1.2em; /* Adjust icon size as needed */
+    color: #0b0909; /* Color of the icon */
+}
+.user-initial {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    background-color: #3498db; /* Circle background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 15px; /* Font size */
+    font-weight: bold;
+    margin-right: 10px; /* Space between the circle and username */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#user-dropdown a {
+    color: #0a0d0e;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+#user-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust to match the height of your navbar */
+    right:1px;
+    background-color: #f9fafd;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #090912;
+    text-align: center;
+}
+
+#user-dropdown a:hover {
+    background-color: #6ca5b7;
+}
+.username-dropdown.active #user-dropdown {
+    display: block;
+}
+.chatbot-icon {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+.chatbot-container {
+    position: fixed;
+    top: 0; /* Position the container at the top */
+    left: 0; /* Position the container at the left */
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    z-index: 4000;
+    border-radius: 0; /* Optional: Remove border radius for full-screen */
+    
+    /* Optional: Ensure padding and borders are included in the total size */
+    box-sizing: border-box;
+    overflow: auto;
+
+    /* Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+.chatbot-container::-webkit-scrollbar {
+    display: none;
+}
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* Chatbot Header */
+.chatbot-header {
+    background-color: #ccccd1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 26px;
+    font-family: 'Source Sans Pro', sans-serif;
+    z-index: 2000;
+}
+
+.chatbot-header h2 {
+    background: -webkit-linear-gradient(#1e7b75, #1d0781);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
+    font-family: 'League Spartan', sans-serif;
+    margin: 15px;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto; 
+    margin-right: 15px;
+}
+
+/* Chat Body */
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-messages {
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Input Area */
+.chatbot-input-area {
+    display: flex;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+#chatbox {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+.suggested-prompts {
+    display: flex;
+    margin-bottom: 10px; /* Space before the chat content */
+    flex-wrap: wrap; /* Allow prompts to wrap to the next line */
+    justify-content: space-between;
+    width: 100%; 
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span {
+    background-color: #93b9c4;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    display: inline-block; /* Treat each as inline elements */
+    flex: 1; /* Ensure each prompt takes up equal space */
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.suggested-prompts span:hover {
+    background-color: #dcd8d8;
+    transform: scale(1.04);
+}
+
+.suggested-prompts span:active {
+    background-color: #d0d0d0;
+}
+.user-message { /*for sent messages*/
+    background-color: #638ab4;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    align-self: flex-end; /* Align the message to the right */
+    max-width: 70%;
+    word-wrap: break-word;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#send-btn:disabled {
+    background-color: #c6c2c2;
+    cursor: not-allowed;
+}
+#send-btn {
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#send-btn:enabled {
+    background-color: #3b5ea4;
+    cursor: pointer;
+}
+
+#send-btn:hover:enabled {
+    background-color: #193d62;
+}
+
+/*responsiveness*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Stack the navbar elements vertically */
+        padding: 10px 20px;
+        
+        justify-content: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 100%; /* Full width for both left and right nav sections */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%; 
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .nav-left {
+        justify-content: center;
+        
+    }
+    .navbar .logo a {
+        color: #f2f2f7;
+        font-size: 32px;
+        
+        font-weight: bold;
+        font-family: 'League Spartan', sans-serif;
+        text-decoration: none;
+    }
+    .menu-icon a {
+        font-size: 18px; 
+        color: rgb(12, 11, 11);
+        text-decoration: none;
+        cursor: pointer;
+        margin-right: 0px;
+    }
+    /* Stack username dropdown and chatbot horizontally under the Sea Savvy */
+    .nav-right {
+        flex-direction: row; /* Stack horizontally */
+        justify-content: center; /* Space between the elements */
+        width: 100%; /* Ensure the nav-right takes full width */
+    }
+
+    .username-dropdown {
+        z-index: 2000;
+        text-align: left; /* Align dropdown to the left */
+    }
+
+    .chatbot-icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+    }
+
+    #dropdown-menu {
+        width: auto;
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; /* Adjust dropdown below hamburger */
+        width: auto;
+        z-index: 1001;
+        transform: translateX(-100%);
+    }
+
+    /* Adjust dropdown and chatbot icon positioning */
+    .user-initial {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100vw;  /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
+        
+    }
+
+    .chatbot-header {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .chatbot-header h2 {
+        font-size: 40px;  /* Adjust size of the chatbot header */
+    }
+    .chatbot-icon {
+        width: 30px; /* Smaller icon size */
+        height: 30px;
+    }
+
+    .chatbot-body {
+        padding: 10px;
+    }
+
+    .chatbot-input-area {
+        flex-wrap: nowrap;  /* Prevent wrapping input and button */
+    }
+
+    #chatbox {
+        width: calc(100% - 70px);  /* Reduce width to accommodate button */
+    }
+
+    #send-btn {
+        padding: 8px 10px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-header h2 {
+        font-size: 18px;
+    }
+
+    .chatbot-body {
+        font-size: 14px;
+    }
+
+    .suggested-prompts span {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    #chatbox {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    #user-dropdown {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;  /* Full width on mobile */
+        transform: none;  /* Remove the center alignment */
+        left:5px;
+    }
+
+    .user-initial {
+        width: 22px;  /* Smaller size */
+        height: 22px;
+        font-size: 10px;
+    }
+
+    #user-dropdown a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    .nav-right li a {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        color: rgb(14, 9, 9);
+        text-decoration: none;
+    }
+}
+/* Second Navbar Styles */
+.second-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: static;
+    width: 100%;
+    top: 85px; /* Adjust this according to your first navbar's height */
+    z-index: 1000;
+}
+
+.logo-and-search {
+    display: flex;
+    align-items: center;
+}
+
+.second-logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.second-navbar .search-bar {
+    display: flex;
+    align-items: center;
+    width: 350px; /* Adjust width as needed */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.second-navbar .search-bar input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.second-navbar .search-bar button {
+    border: none;
+    background-color: transparent;
+    padding: 8px;
+    cursor: pointer;
+    color: #333;
+}
+
+.second-navbar .nav-links {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.second-navbar .nav-links li {
+    margin-right: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.nav-links .dropdown-content li{
+    margin-right: 0px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.second-navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.nav-links li {
+    position: relative;
+  }
+.second-navbar .nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.second-navbar .nav-icons li {
+    margin-right: 15px;
+}
+
+.second-navbar .nav-icons a {
+    text-decoration: none;
+    color: #333;
+}
+
+.second-navbar .profile-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Dropdown styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 4000;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+  
+.dropdown-content li {
+    list-style: none;
+    margin-right: 0px;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    position: relative;
+}
+  
+.dropdown-content a:hover {
+    color: #0077b6;
+}
+  
+/* Show the dropdown when hovering over Categories */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+/* Hover effect for Categories link */
+.dropbtn:hover {
+    background-color: #555;
+}
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hover effect for Categories link */
+.dropbtn:hover {
+    background-color: #555;
+}
+
+/* Arrow next to each category */
+.arrow {
+    float: right;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%; /* Position to the right of the main dropdown */
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.submenu a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: black;
+}
+
+.submenu a:hover {
+    color: #0077b6;
+}
+
+/* Show submenu on hover */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Adjust z-index so submenus appear on top of other elements */
+.dropdown-content, .submenu {
+    z-index: 3000;
+}
+/* Click functionality for small screens */
+@media (max-width: 768px) {
+    .dropdown-content {
+      display: none; /* Start hidden */
+    }
+  
+    .dropdown.open .dropdown-content {
+      display: block; /* Show dropdown when 'open' class is added */
+    }
+  }
+  
+@media (max-width: 768px) {
+    .second-navbar {
+        padding: 8px;
+        flex-direction: column;
+        top:50px;
+    }
+
+    .second-logo {
+        font-size: 22px;
+        margin-right: 0px;
+    }
+
+    .second-navbar .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .second-navbar .search-bar input {
+        padding: 5px;
+        
+    }
+
+    .second-navbar .nav-links {
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .second-navbar .nav-links li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .second-navbar .search-bar {
+        width: 100%;
+    }
+
+    .second-logo {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .second-navbar .nav-links li {
+        margin-bottom: 8px;
+    }
+
+    .second-navbar .nav-links a {
+        font-size: 12px;
+    }
+    li {
+        margin-right: 10px;
+    }
+    #dropdown-menu {
+        width: auto;
+        display: none;
+        position: absolute;
+        top: 100px;
+        width: fit-content;
+        z-index: 4000;
+        transform: translateX(-60%);
+        font-size: 16px;
+        color: black;
+    }
+    #dropdown-menu a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: #050606;
+        font-size: 16px;
+    }
+}
+/* Welcome Message Styles */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin-top: 20px; /* Adjust this value based on your navbar heights */
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-message .user-name {
+    color: #0077b6; /* Highlighting the user's name */
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Responsive adjustments */
+
+
+@media (max-width: 768px) {
+    .welcome-message {
+        font-size: 20px;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-message {
+        font-size: 18px;
+        
+    }
+}
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 360px;
+    margin: auto;
+    z-index: 1000;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Slide styling */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Initially hide all slides */
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+    z-index: 1;
+    top: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    transform: translateX(100%); /* Initial position off-screen to the right */
+}
+.active {
+    display: flex;
+    transform: translateX(0); /* Slide into the viewport */
+}
+
+/* Transition out and in simultaneously */
+.previous {
+    transform: translateX(-100%); /* Slide out of the viewport to the left */
+}
+
+.next {
+    transform: translateX(100%); /* Slide into the viewport from the right */
+}
+
+
+/* Container for content */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f1b36c; /* Background color for the slide */
+    z-index: 1000;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 20px;
+}
+.content-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #5da69b; /* Background color for the slide */
+    z-index:1000 ;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 20px;
+}
+.content-container3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #9fba74; /* Background color for the slide */
+    z-index:1000 ;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Text container */
+.text-container {
+    max-width: 50%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Heading and text */
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color: #0077b6;
+    text-decoration: underline;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Button styling */
+.slide-button {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slide-button:hover {
+    background-color: #005f87;
+}
+
+/* Image container */
+.image-container {
+    max-width: 40%;
+}
+
+.image-container img {
+    width: 80%;
+    height: fit-content;
+    border-radius: 10px;
+}
+.image-container2 {
+    max-width: 40%;
+    padding: 10px;
+}
+
+.image-container2 img {
+    width: 80%;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    /* Make the content stack vertically */
+    .content-container, .content-container2, .content-container3 {
+        
+        align-items: center;
+        padding: 20px;
+    
+    }
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        height: 360px;
+        z-index: 1000;
+        overflow: hidden;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    /* Make the text container take full width */
+    .text-container {
+        max-width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px; /* Add spacing between text and image */
+        margin-top: 20px;
+    }
+    h2{
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+    /* Adjust the image to take full width */
+    .image-container img, .image-container2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust padding for smaller screens */
+    .slide-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+/* Media query for extra small screens (below 480px) */
+@media screen and (max-width: 480px) {
+    /* Further adjustments for smaller mobile devices */
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        height: 300px;
+        margin: auto;
+        z-index: 1000;
+        overflow: hidden;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        display: none; /* Initially hide all slides */
+        justify-content: center;
+        align-items: center;
+        transition: transform 1s ease-in-out;
+        z-index: 1;
+        top: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+        transform: translateX(100%); /* Initial position off-screen to the right */
+    }
+    .text-container {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph text size */
+    }
+
+    .slide-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .dropdown-content{
+        min-width: 150px;
+    }
+    .submenu{
+        min-width: 150px;
+    }
+}
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px;
+}
+
+.course-card {
+    flex: 1 1 calc(25% - 20px); /* Each card takes up 25% of the container width, minus the gap */
+    background-color: #ebe9e9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.course-img {
+    width: 100%;
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+.course-card:hover {
+    transform: scale(1.05);
+    overflow: visible;
+}
+
+.course-name {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.course-description {
+    font-size: 0.9em;
+    color: #666;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.course-card:hover .course-description {
+    display: block;
+}
+/* Hidden details box */
+.course-details {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    transition: top 0.4s ease; /* Animation effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    height: auto;
+}
+
+.course-card:hover .course-details {
+    top: 0; /* Slide up to reveal the details */
+    height: fit-content;
+}
+
+.course-details h3 {
+    font-size: 1.1em;
+    margin: 0 0 10px;
+    color: #000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.course-details p {
+    font-size: 0.9em;
+    color: #666;
+    text-align: justify;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.course-details ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.course-details ul li {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.start-now {
+    background-color: #82aae3;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.start-now:hover{
+    background-color: #3e6397;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 1024px) {
+    .course-card {
+        flex: 1 1 calc(50% - 20px); /* On medium screens, two courses per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        flex: 1 1 calc(100% - 20px); /* On small screens, one course per row */
+    }
+}
+
+.about-us {
+    padding: 15px 30px; 
+    background-color: #669bab; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 80px;
+}
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+    /*margin-top: 20px; 
+    width: 100%;*/
+}
+
+.social-icon {
+    font-size: 30px; 
+    color: #fcfcfc; 
+    margin: 0 10px; 
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .social-media {
+        justify-content: center; /* Center the icons for mobile */
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        font-size: 25px; /* Decrease the size for smaller screens */
+    }
+}
+
+.social-icon:hover {
+    color: #9ee0f5; 
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px; 
+    font-size: 18px; 
+}
+.contact-info-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .contact-info-container {
+        flex-direction: column; /* Stack the email and icons vertically on small screens */
+        align-items: center;
+        text-align: center;
+    }
+}
+.email-link {
+    display: flex;
+    align-items: center; 
+    color: #fcfcfc;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    font-size: 20px;
+}
+
+.email-link i {
+    margin-right: 10px; 
+    font-size: 30px;
+}
+
+.email-link:hover {
+    color: #9ee0f5;
+}

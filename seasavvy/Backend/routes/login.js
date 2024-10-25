@@ -26,8 +26,8 @@ router.post("/", async (req, res) => {
         const logUser = await user.findOne({email : email, password : password});
         if(logUser) {
             req.session.userId = logUser._id;
-            res.redirect("/home");
             console.log("Login successfull. User has been redirected to /main");
+            res.redirect("/home");
         }
         else if (!logUser && findEmail) {
             res.status(401).send('Invalid login');

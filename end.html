@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quiz - Score</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="end.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Score</h1>
+
+        <!-- Donut chart container -->
+        <div class="donut-chart">
+            <svg width="150" height="150">
+                <!-- Background circle -->
+                <circle class="circle-bg" cx="75" cy="75" r="60"></circle>
+                <!-- Foreground circle (score) -->
+                <circle class="circle" cx="75" cy="75" r="60" stroke-dasharray="377" stroke-dashoffset="377"></circle>
+            </svg>
+            <div class="score-label" id="finalScore">0</div>
+        </div>
+
+        <a class="btn" href="QuizPage.html">Play Again</a>
+    </div>
+
+    <script>
+        // Set score
+        const finalScore = localStorage.getItem('mostRecentScore') || 0;
+        document.getElementById('finalScore').innerText = finalScore;
+
+        // Donut chart animation
+        const circle = document.querySelector('.circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        circle.style.strokeDasharray = `${circumference}`;
+        const offset = circumference - (finalScore / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+    </script>
+</body>
+</html>

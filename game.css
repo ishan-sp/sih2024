@@ -1,0 +1,118 @@
+body, html {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-background);
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3.6rem;
+    color: var(--text-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.choice-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    font-size: 1.8rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: transform 150ms, box-shadow 150ms;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.choice-prefix {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-right: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.choice-text {
+    flex: 1;
+}
+
+#question {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+#progress-bar {
+    height: 1rem;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+#progress-bar-full {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-color);
+    transition: width 0.5s;
+}
+
+.hud-prefix, #questionCounter, #score {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ff4500;
+    margin-top: 1.5rem;
+}
+
+.correct {
+    background-color: var(--success-color) !important;
+    color: white !important;
+}
+
+.incorrect {
+    background-color: #dc3545 !important;
+    color: white !important;
+}

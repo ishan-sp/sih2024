@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Scores</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="highscore.css">
+</head>
+<body>
+    <div class="container">
+        <h1>High Scores</h1>
+        <ul id="highScoresList"></ul>
+        <a class="btn" href="QuizPage.html">Back to Quiz</a>
+    </div>
+    <script>
+        fetch('/highScores')
+            .then(response => response.json())
+            .then(data => {
+                const highScoresList = document.getElementById('highScoresList');
+                data.forEach(score => {
+                    const li = document.createElement('li');
+                    li.innerText = `${score.username}: ${score.score}`;
+                    highScoresList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
